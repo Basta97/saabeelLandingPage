@@ -1,9 +1,14 @@
+section {
 
-section{
-
-    padding: 5.625rem 0;
-    background:linear-gradient(rgba(235, 176, 41, 0.1),rgba(81, 86, 190, 0.1));
+    padding-bottom: 5.625rem;
 }
+
+.sb-future {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .sb-future-header {
     display: flex;
     flex-direction: column;
@@ -12,7 +17,7 @@ section{
 }
 
 .sb-future-ref {
-    background: #fd7e14; 
+    background: #fd7e14;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     text-align: center;
@@ -26,4 +31,42 @@ section{
     font-weight: 700;
     line-height: 190%;
     margin: 0;
+}
+
+.sb-future-cards {
+    display: flex;
+    gap: 21px;
+}
+
+.sb-future-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fd7e14;
+    border-radius: 24px;
+    padding: 24px 32px;
+    flex: 1;
+    align-items: center;
+    color: #ffffff;
+    gap: 12px;
+
+
+}
+
+.sb-card-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 7px;
+
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 170%;
+    }
 }
