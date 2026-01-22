@@ -1,31 +1,165 @@
+.sb-package {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding-bottom: 90px;
+    direction: rtl; 
+
 .sb-package-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 7px;
+    text-align: center;
 }
 
 .sb-package-ref {
-    background: #fd7e14;
-    padding: 0.5rem 1rem;
+    background: #FFB800; 
+    padding: 0.5rem 1.5rem;
     border-radius: 50px;
-    text-align: center;
     color: white;
     font-size: 0.875rem;
-    margin: 0 auto;
+    font-weight: 500;
 }
 
 .sb-package-title {
     font-size: 2rem;
     font-weight: 700;
-    line-height: 190%;
-    margin: 0;
+    line-height: 1.4;
+    color: #2D2D2D;
+    margin: 15px 0 0 0;
 }
-.sb-req-price{
-     display: flex;
-     justify-content: space-between;
-        
-     border-radius: 50px;
-     border: 1px solid black; 
-     padding: 16px 24px;  
+
+.sb-pricing-card {
+    background: #ffffff;
+    border: 1px solid #EAEAEA; 
+    border-radius: 2rem;
+    padding: 40px 30px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.sb-pricing-card.sb-active,
+.sb-pricing-card:hover {
+    border-color: #5156BE; 
+    border-top-width: 8px; 
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 8px;
+    box-shadow: 0 20px 40px rgba(81, 86, 190, 0.15);
+    transform: translateY(-8px);
+}
+
+.sb-card-icon {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F6FF;
+    border-radius: 50%;
+}
+
+.sb-card-icon img {
+    width: 30px;
+    height: auto;
+}
+
+.sb-card-title {
+    color: #5156BE; 
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.sb-card-desc {
+    color: #707070;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    min-height: 70px;
+}
+
+.sb-btn-outline {
+    border: 1.5px solid #E0E0E0;
+    border-radius: 50px;
+    padding: 16px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #444444;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sb-pricing-card.sb-active .sb-btn-outline,
+.sb-pricing-card:hover .sb-btn-outline {
+    background-color: #5156BE;
+    color: #ffffff !important;
+    border-color: #5156BE;
+}
+
+.sb-arrow-circle {
+    background: #5156BE; 
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: 0.3s;
+    transform: scaleX(1); 
+}
+
+.sb-pricing-card.sb-active .sb-arrow-circle,
+.sb-pricing-card:hover .sb-arrow-circle {
+    background: #ffffff;
+    color: #5156BE;
+}
+
+.sb-feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 35px;
+    width: 100%;
+    text-align: right;
+}
+
+.sb-feature-item {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    color: #555555;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.sb-check-icon {
+    color: #FFB800;
+    margin-left: 12px; 
+    margin-right: 0;  
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 991px) {
+    .sb-package-title {
+        font-size: 1.75rem;
+    }
+    .sb-pricing-card {
+        margin-bottom: 20px;
+    }
 }
