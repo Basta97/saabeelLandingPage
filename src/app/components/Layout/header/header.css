@@ -1,0 +1,70 @@
+.sb-header-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  color: white;
+  font-size: 14px;
+
+}
+
+.sb-top-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.sb-social-icon {
+  width: 44px;
+  height: 44px;
+
+}
+
+.sb-social-icon:hover {
+  opacity: 0.7;
+}
+
+.sb-contact-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sb-contact-info span {
+  font-size: 0.9rem;
+}
+
+.sb-logo {
+  height: 48px;
+  width: 135px;
+}
+.sb-nav{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  
+}
+
+.sb-nav-link {
+  color: white !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.sb-nav-link:hover, .sb-nav-link.active {
+  color: var(--sb-primary-color) !important;
+}
+
+
+.sb-btn-primary {
+  background-color: var(--sb-primary-color);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  padding: 17px 40px !important;
+  font-size: 14px;
+}
+
+.sb-btn-primary:hover {
+  background-color: var(--sb-primary-color);
+  color: white;
+}

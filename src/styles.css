@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Alexandria';
+  src: url('/fonts/Alexandria-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FFShamel Family Sans One Bold';
+  src: url('/fonts/FFShamelFamily-SansOneBold.ttf') format('truetype');
+  font-weight: bold;
+  font-display: swap;
+}
+
+:root {
+  --alexandria-font: 'Alexandria', sans-serif;
+  --ffshamel-bold-font: 'FFShamel Family Sans One Bold', sans-serif;
+  --sb-primary-color: rgba(81, 86, 190, 1);
+}

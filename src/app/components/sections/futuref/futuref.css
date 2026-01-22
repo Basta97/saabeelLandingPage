@@ -1,0 +1,29 @@
+
+section{
+
+    padding: 5.625rem 0;
+    background:linear-gradient(rgba(235, 176, 41, 0.1),rgba(81, 86, 190, 0.1));
+}
+.sb-future-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.sb-future-ref {
+    background: #fd7e14; 
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    font-size: 0.875rem;
+    margin: 0 auto;
+}
+
+.sb-future-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 190%;
+    margin: 0;
+}

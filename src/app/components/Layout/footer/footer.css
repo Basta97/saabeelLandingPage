@@ -1,0 +1,32 @@
+.sb-footer{
+   
+}
+.sb-primary-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+
+}
+.sb-logo-footer{
+    height: 80px;
+}
+.sb-social-icons-footer{
+   filter: brightness(0) invert(1);
+}
+.sb-top-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.sb-secondry-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    p{
+        color: white;
+        font-size: 14px
+    }
+
+}
