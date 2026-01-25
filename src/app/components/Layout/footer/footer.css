@@ -3,7 +3,7 @@
 }
 .sb-primary-footer{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 2rem;
@@ -29,4 +29,18 @@
         font-size: 14px
     }
 
+}
+
+@media (max-width: 991px) {
+    .sb-primary-footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    
+    .sb-secondry-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 }

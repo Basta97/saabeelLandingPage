@@ -22,25 +22,36 @@
       </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark p-0">
+    <nav class="sb-navbar">
       <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
 
-        <button class=" sb-btn-primary px-4 py-2">ابدأ الآن</button>
+        <button class="sb-btn-primary px-4 py-2 d-none d-lg-block">ابدأ الآن</button>
 
+        <div class="sb-nav-container d-flex align-items-center gap-3">
+          <div class="sb-nav" [class.sb-open]="isMenuOpen()">
+            <ul class="navbar-nav gap-3 text-end flex-row-reverse">
+              <li class="nav-item"><a class="nav-link sb-nav-link active" href="#">الرئيسية</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">عن سبيل</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المميزات</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">الأسئلة الشائعة</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المدونة</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">تواصل معنا</a></li>
+              <li class="nav-item d-lg-none mt-3"><button class="sb-btn-primary w-100">ابدأ الآن</button></li>
+            </ul>
+          </div>
 
-        <div class="sb-nav justify-content-center" id="navbarNav">
-          <ul class="navbar-nav gap-3 text-end flex-row-reverse">
-            <li class="nav-item"><a class="nav-link sb-nav-link active" href="#">الرئيسية</a></li>
-            <li class="nav-item"><a class="nav-link sb-nav-link" href="#">عن سبيل</a></li>
-            <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المميزات</a></li>
-            <li class="nav-item"><a class="nav-link sb-nav-link" href="#">الأسئلة الشائعة</a></li>
-            <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المدونة</a></li>
-            <li class="nav-item"><a class="nav-link sb-nav-link" href="#">تواصل معنا</a></li>
-          </ul>
-          <a class="navbar-brand m-0" href="#">
-            <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="sb-logo">
-          </a>
+          <div class="sb-menu-overlay" [class.sb-open]="isMenuOpen()" (click)="toggleMenu()"></div>
+
+          <button class="sb-hamburger d-lg-none" (click)="toggleMenu()" [class.sb-open]="isMenuOpen()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+
+        <a class="navbar-brand" href="#">
+          <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="sb-logo">
+        </a>
 
       </div>
     </nav>

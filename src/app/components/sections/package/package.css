@@ -156,10 +156,39 @@
 }
 
 @media (max-width: 991px) {
+    .sb-package {
+        gap: 40px;
+        padding-bottom: 60px;
+    }
+    
     .sb-package-title {
         font-size: 1.75rem;
     }
+    
     .sb-pricing-card {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sb-package {
+        gap: 30px;
+        padding-bottom: 40px;
+    }
+    
+    .sb-package-title {
+        font-size: 1.5rem;
+    }
+    
+    .sb-pricing-card {
+        padding: 30px 20px;
+    }
+    
+    .sb-card-title {
+        font-size: 1.2rem;
+    }
+    
+    .sb-card-desc {
+        font-size: 0.9rem;
     }
 }
