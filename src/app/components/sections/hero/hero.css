@@ -1,5 +1,5 @@
 .sb-hero-section {
-  background: linear-gradient(rgba(7, 8, 18, 0.93), rgba(7, 8, 18, 0.93)),url('/images/bg-hero.png') no-repeat center center;
+  background-color: black;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -164,9 +164,6 @@
 .sb-app-btn:hover{
   background-color: white;
   color: black;
-  /* svg{
-    color: black;
-  } */
   svg path { fill: black; }
 }
 

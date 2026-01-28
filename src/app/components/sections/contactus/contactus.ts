@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { SectionTitle } from '../../common/section-title/section-title';
 
 @Component({
   selector: 'app-contactus',
-  imports: [],
+  imports: [SectionTitle],
   templateUrl: './contactus.html',
   styleUrl: './contactus.css',
 })

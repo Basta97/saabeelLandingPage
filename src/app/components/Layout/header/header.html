@@ -1,7 +1,11 @@
-<header class="sb-header-wrapper py-3">
+<header class="sb-header-wrapper">
+  <!-- Full page overlay -->
+  <div class="sb-menu-overlay" [class.sb-open]="isMenuOpen()" (click)="toggleMenu()"></div>
+  
   <div class="container">
-    <div class="sb-top-bar d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-secondary">
-      <div class="sb-social-icons und-flex gap-3">
+    <!-- Desktop top bar ONLY -->
+    <div class="sb-top-bar d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-secondary d-none d-lg-flex">
+      <div class="sb-social-icons d-flex gap-3">
         <a href="#"><img src="icons/facebook_icon.svg" alt="Facebook" class="sb-social-icon"></a>
         <a href="#"><img src="icons/youtube_icon.svg" alt="YouTube" class="sb-social-icon"></a>
         <a href="#"><img src="icons/linkedin_icon.svg" alt="LinkedIn" class="sb-social-icon"></a>
@@ -11,49 +15,88 @@
       </div>
 
       <div class="sb-contact-info d-flex gap-4 align-items-center text-white">
-        <div class="sb-contact-item d-flex align-items-center gap-2">
-          <span>+20 100 123 4567</span>
+        <div class="sb-contact-item">
+          <a href="mailto:hi@saabeel.com" target="_blank">hi@saabeel.com</a>
           <img src="icons/mail_icon.svg" alt="Mail" class="sb-contact-icon">
         </div>
-        <div class="sb-contact-item d-flex align-items-center gap-2">
-          <span>+20 100 123 4567</span>
+        <div class="sb-contact-item">
+          <a href="https://wa.me/201040436991" target="_blank" rel="noopener">+201040436991</a>
           <img src="icons/call_icon.svg" alt="Call" class="sb-contact-icon">
         </div>
       </div>
     </div>
 
+    <!-- Main nav -->
     <nav class="sb-navbar">
       <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
-
+        <!-- Desktop CTA -->
         <button class="sb-btn-primary px-4 py-2 d-none d-lg-block">ابدأ الآن</button>
 
-        <div class="sb-nav-container d-flex align-items-center gap-3">
+        <!-- Mobile/Desktop nav container -->
+        <div class="sb-nav-container d-flex align-items-center gap-2">
+          <!-- Mobile/Desktop menu -->
           <div class="sb-nav" [class.sb-open]="isMenuOpen()">
-            <ul class="navbar-nav gap-3 text-end flex-row-reverse">
+            <!-- MOBILE: Logo at top -->
+            <div class="sb-mobile-logo d-lg-none mb-3 pb-2 pt-2">
+              <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="w-100">
+            </div>
+            
+           
+
+            <!-- Nav links -->
+            <ul class="navbar-nav gap-3 text-end flex-row-reverse d-lg-flex">
               <li class="nav-item"><a class="nav-link sb-nav-link active" href="#">الرئيسية</a></li>
               <li class="nav-item"><a class="nav-link sb-nav-link" href="#">عن سبيل</a></li>
               <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المميزات</a></li>
               <li class="nav-item"><a class="nav-link sb-nav-link" href="#">الأسئلة الشائعة</a></li>
               <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المدونة</a></li>
               <li class="nav-item"><a class="nav-link sb-nav-link" href="#">تواصل معنا</a></li>
-              <li class="nav-item d-lg-none mt-3"><button class="sb-btn-primary w-100">ابدأ الآن</button></li>
             </ul>
+            
+           
+            
+            <!-- Mobile CTA -->
+            <div class="nav-item d-lg-none mt-4 px-4 pb-4">
+              <button class="sb-btn-primary w-100">ابدأ الآن</button>
+            </div>
+             <!-- MOBILE: Social icons -->
+            <div class="sb-mobile-social d-lg-none border-top border-2 pt-2">
+              <div class="d-flex gap-3 justify-content-center">
+                <a href="#"><img src="icons/facebook_icon.svg" alt="Facebook" class="sb-social-icon"></a>
+                <a href="#"><img src="icons/youtube_icon.svg" alt="YouTube" class="sb-social-icon"></a>
+                <a href="#"><img src="icons/linkedin_icon.svg" alt="LinkedIn" class="sb-social-icon"></a>
+                <a href="#"><img src="icons/x_icon.svg" alt="X" class="sb-social-icon"></a>
+                <a href="#"><img src="icons/instgram_icon.svg" alt="Instagram" class="sb-social-icon"></a>
+                <a href="#"><img src="icons/tiktok_icon.svg" alt="TikTok" class="sb-social-icon"></a>
+              </div>
+            </div>
           </div>
+          
 
-          <div class="sb-menu-overlay" [class.sb-open]="isMenuOpen()" (click)="toggleMenu()"></div>
-
-          <button class="sb-hamburger d-lg-none" (click)="toggleMenu()" [class.sb-open]="isMenuOpen()">
+          <!-- Hamburger -->
+          <button title="menuBar" class="sb-hamburger d-lg-none" (click)="toggleMenu()" [class.sb-open]="isMenuOpen()">
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
 
+        <!-- Logo -->
         <a class="navbar-brand" href="#">
           <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="sb-logo">
         </a>
-
       </div>
     </nav>
   </div>
 </header>
+
+<!-- 🔥 FLOATING WHATSAPP BUTTON (Always visible on all pages) -->
+<a href="https://wa.me/201040436991?text=مرحباً%20أود%20الاستفسار%20عن%20سبيل" 
+   target="_blank" 
+   rel="noopener" 
+   class="whatsapp-floating-btn"
+   aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 32 32" class="whatsapp-floating-icon">
+    <path fill="currentColor" d="M16 0C7.164 0 0 7.164 0 16c0 2.826.739 5.478 2.033 7.788L0 32l8.484-2.014A15.916 15.916 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm9.438 22.713c-.38 1.07-2.23 1.955-3.056 2.089-.827.134-1.896.181-3.062-.191-1.166-.372-3.34-1.297-5.755-3.502-3.014-2.755-4.958-6.125-5.137-6.41-.179-.285-1.492-1.977-1.492-3.772 0-1.795.916-2.683 1.271-3.045.355-.362.78-.453 1.041-.453.261 0 .523.005.751.014.24.01.561-.092.878.669.316.76 1.084 2.643 1.179 2.834.095.191.159.414.032.667-.127.252-.191.414-.38.636-.19.222-.399.495-.57.666-.19.191-.388.397-.167.779.221.382 1.304 2.152 2.797 3.485 1.919 1.713 3.487 2.24 4.004 2.474.517.234.817.195 1.117-.119.3-.314.76-.848 1.22-1.382.46-.534.856-.601 1.185-.453.329.148 2.091 1.023 2.452 1.209.361.186.603.277.691.43.088.153.088.895-.292 1.966z"/>
+  </svg>
+</a>

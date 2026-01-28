@@ -5,30 +5,7 @@
     padding-bottom: 90px;
     direction: rtl; 
 }
-.sb-package-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7px;
-    text-align: center;
-}
 
-.sb-package-ref {
-    background: #FFB800; 
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    color: white;
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.sb-package-title {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #2D2D2D;
-    margin: 15px 0 0 0;
-}
 
 .sb-pricing-card {
     background: #ffffff;
