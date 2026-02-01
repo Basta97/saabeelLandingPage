@@ -62,6 +62,7 @@
   position: relative;
   display: inline-block;
   overflow: visible;
+  max-width: 100%;
 
 } 
 
@@ -207,11 +208,116 @@
     width: 100%;
     max-width: 300px;
     height: auto;
-    margin: 0 auto;
   }
 
   .sb-app-badges {
     justify-content: center !important;
     flex-direction: column !important;
+  }
+}
+
+.sb-img-p1 {
+  animation: slideFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  
+
+}
+
+/* Part 2 - Slide from right with delay */
+.sb-img-p2 {
+  animation: slideFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+    
+
+}
+
+/* Part 3 - Center phone scale + rotate */
+.sb-img-p3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: scaleRotate 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+    
+
+
+}
+
+.sb-img-p4 {
+  animation: fadeScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s both;
+    
+
+
+
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleRotate {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeScale {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Add hover interactions */
+.sb-img-p1:hover,
+.sb-img-p2:hover,
+.sb-img-p4:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+.sb-img-p3:hover {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
   }
 }
