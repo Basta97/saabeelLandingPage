@@ -6,7 +6,6 @@
     direction: rtl; 
 }
 
-
 .sb-pricing-card {
     background: #ffffff;
     border: 1px solid #EAEAEA; 
@@ -20,40 +19,87 @@
     align-items: center;
     text-align: center;
     position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Top and Bottom Border Effect using pseudo-elements */
+.sb-pricing-card::before,
+.sb-pricing-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(90deg, transparent, #5156BE, transparent);
+    transition: height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
+}
+
+.sb-pricing-card::before {
+    top: 0;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.sb-pricing-card::after {
+    bottom: 0;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.sb-pricing-card.sb-active::before,
+.sb-pricing-card.sb-active::after,
+.sb-pricing-card:hover::before,
+.sb-pricing-card:hover::after {
+    height: 8px;
 }
 
 .sb-pricing-card.sb-active,
 .sb-pricing-card:hover {
     border-color: #5156BE; 
-    border-top-width: 8px; 
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-bottom-width: 8px;
     box-shadow: 0 20px 40px rgba(81, 86, 190, 0.15);
     transform: translateY(-8px);
 }
 
 .sb-card-icon {
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F5F6FF;
+    background: linear-gradient(135deg, #F5F6FF, #E8E9FF);
     border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.sb-pricing-card:hover .sb-card-icon {
+    transform: rotate(360deg) scale(1.1);
+    background: linear-gradient(135deg, #5156BE, #4245A8);
 }
 
 .sb-card-icon img {
-    width: 30px;
+    width: 40px;
     height: auto;
+    transition: filter 0.3s ease;
+    pointer-events: none;
 }
+
 
 .sb-card-title {
     color: #5156BE; 
     font-weight: 700;
     font-size: 1.4rem;
     margin-bottom: 15px;
+    font-family: 'FFShamel Family Sans One Bold', sans-serif;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.sb-pricing-card:hover .sb-card-title {
+    color: #4245A8;
 }
 
 .sb-card-desc {
@@ -62,12 +108,19 @@
     line-height: 1.7;
     margin-bottom: 30px;
     min-height: 70px;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.sb-pricing-card:hover .sb-card-desc {
+    color: #555555;
 }
 
 .sb-btn-outline {
     border: 1.5px solid #E0E0E0;
     border-radius: 50px;
-    padding: 16px 24px;
+    padding: 12px 20px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -76,7 +129,22 @@
     color: #444444;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.sb-btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
 }
 
 .sb-pricing-card.sb-active .sb-btn-outline,
@@ -84,20 +152,30 @@
     background-color: #5156BE;
     color: #ffffff !important;
     border-color: #5156BE;
+    transform: scale(1.02);
+}
+
+.sb-pricing-card:hover .sb-btn-outline::before {
+    left: 100%;
 }
 
 .sb-arrow-circle {
     background: #5156BE; 
     color: #ffffff;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    transition: 0.3s;
-    transform: scaleX(1); 
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.sb-arrow-circle svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .sb-pricing-card.sb-active .sb-arrow-circle,
@@ -106,12 +184,18 @@
     color: #5156BE;
 }
 
+.sb-pricing-card:hover .sb-arrow-circle svg {
+    transform: translateX(-5px);
+}
+
 .sb-feature-list {
     list-style: none;
     padding: 0;
     margin-top: 35px;
     width: 100%;
     text-align: right;
+    position: relative;
+    z-index: 2;
 }
 
 .sb-feature-item {
@@ -122,6 +206,12 @@
     color: #555555;
     font-size: 0.95rem;
     font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sb-pricing-card:hover .sb-feature-item {
+    color: #333333;
+    transform: translateX(-3px);
 }
 
 .sb-check-icon {
@@ -130,8 +220,14 @@
     margin-right: 0;  
     font-weight: bold;
     font-size: 1.1rem;
+    transition: all 0.3s ease;
 }
 
+.sb-pricing-card:hover .sb-check-icon {
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
 @media (max-width: 991px) {
     .sb-package {
         gap: 40px;
@@ -144,6 +240,29 @@
     
     .sb-pricing-card {
         margin-bottom: 20px;
+    }
+    
+    .sb-card-icon {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .sb-card-icon img {
+        width: 38px;
+    }
+    
+    .sb-btn-outline {
+        padding: 10px 18px;
+    }
+    
+    .sb-arrow-circle {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .sb-arrow-circle svg {
+        width: 17px;
+        height: 17px;
     }
 }
 
@@ -161,11 +280,35 @@
         padding: 30px 20px;
     }
     
+    .sb-card-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .sb-card-icon img {
+        width: 35px;
+    }
+    
     .sb-card-title {
         font-size: 1.2rem;
     }
     
     .sb-card-desc {
         font-size: 0.9rem;
+    }
+    
+    .sb-btn-outline {
+        padding: 10px 16px;
+        font-size: 0.9375rem;
+    }
+    
+    .sb-arrow-circle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .sb-arrow-circle svg {
+        width: 16px;
+        height: 16px;
     }
 }

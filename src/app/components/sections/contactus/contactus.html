@@ -1,19 +1,18 @@
-<section>
+<section class="sb-contact-section">
     <div class="container">
         <div class="sb-contact-layout">
+            <!-- Left Side - Contact Info -->
             <div class="sb-contactus">
-                <div>
-
-                    <app-section-title refText="تواصل معنا" style="align-items: start !important;">
-                    </app-section-title>
+                <div class="sb-contactus-intro">
+                    <app-section-title refText="تواصل معنا" style="align-items: start !important;"></app-section-title>
                     <div class="sb-contactus-header">
                         <h1>راسل فريقنا</h1>
                         <p>شاركنا بياناتك وسيقوم فريق خدمة العملاء بالتواصل معك مباشرة.</p>
-
                     </div>
                 </div>
+
                 <div class="sb-contactus-det">
-                    <a>
+                    <a href="tel:+201040436991" class="sb-contact-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
                             <g fill="#5156BE" clip-path="url(#a)">
                                 <path stroke="#5156BE" stroke-width=".15"
@@ -29,9 +28,10 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        <span dir="ltr">+201001234567</span>
+                        <span dir="ltr">+201040436991</span>
                     </a>
-                    <a>
+
+                    <a href="mailto:hi@saabeel.com" class="sb-contact-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
                             <g fill="#5156BE" clip-path="url(#a)">
                                 <path
@@ -45,9 +45,10 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        support@saabeel.com
+                        hi@saabeel.com
                     </a>
-                    <a>
+
+                    <a href="#" class="sb-contact-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
                             <path fill="#5156BE" stroke="#5156BE" stroke-width=".2"
                                 d="M16.18.9c5.117 0 9.28 4.163 9.28 9.28 0 1.243-.532 2.937-1.323 4.775-.794 1.842-1.854 3.844-2.924 5.706a113.007 113.007 0 0 1-4.507 7.162.64.64 0 0 1-1.053.001c-.179-.259-2.364-3.438-4.505-7.163-1.071-1.862-2.132-3.864-2.925-5.706C7.43 13.117 6.9 11.423 6.9 10.18 6.9 5.063 11.063.9 16.18.9Zm0 1.28c-4.411 0-8 3.589-8 8 0 .964.39 2.297 1.011 3.805.62 1.505 1.467 3.172 2.369 4.8 1.748 3.154 3.703 6.155 4.62 7.53.916-1.375 2.872-4.375 4.62-7.53.903-1.628 1.749-3.295 2.369-4.8.622-1.508 1.01-2.841 1.01-3.805 0-4.411-3.588-8-8-8Z" />
@@ -57,40 +58,54 @@
                         مصر - المنصورة
                     </a>
                 </div>
+
                 <div class="sb-contact-social">
                     <h4>وسائل التواصل الاجتماعي</h4>
-                    <div class="sb-social-icons und-flex gap-3">
-                        <a href="#"><img src="icons/facebook_icon.svg" alt="Facebook" class="sb-social-icon"></a>
-                        <a href="#"><img src="icons/youtube_icon.svg" alt="YouTube" class="sb-social-icon"></a>
-                        <a href="#"><img src="icons/linkedin_icon.svg" alt="LinkedIn" class="sb-social-icon"></a>
-                        <a href="#"><img src="icons/x_icon.svg" alt="X" class="sb-social-icon"></a>
-                        <a href="#"><img src="icons/instgram_icon.svg" alt="Instagram" class="sb-social-icon"></a>
-                        <a href="#"><img src="icons/tiktok_icon.svg" alt="TikTok" class="sb-social-icon"></a>
+                    <div class="sb-social-icons">
+                        <a href="#" aria-label="Facebook"><img src="icons/facebook_icon.svg" alt="Facebook"
+                                class="sb-social-icon"></a>
+                        <a href="#" aria-label="YouTube"><img src="icons/youtube_icon.svg" alt="YouTube"
+                                class="sb-social-icon"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="icons/linkedin_icon.svg" alt="LinkedIn"
+                                class="sb-social-icon"></a>
+                        <a href="#" aria-label="X"><img src="icons/x_icon.svg" alt="X" class="sb-social-icon"></a>
+                        <a href="#" aria-label="Instagram"><img src="icons/instgram_icon.svg" alt="Instagram"
+                                class="sb-social-icon"></a>
+                        <a href="#" aria-label="TikTok"><img src="icons/tiktok_icon.svg" alt="TikTok"
+                                class="sb-social-icon"></a>
                     </div>
                 </div>
-
             </div>
+
+            <!-- Right Side - Contact Form -->
             <div class="sb-form-wrapper">
                 <form class="sb-contact-form">
-                    <div class="row g-3 mb-3">
+                    <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="fullName" class="form-label">الاسم الكامل<span class="required">*</span></label>
-                            <input type="text" class="form-control" id="fullName" placeholder="الاسم الكامل*">
+                            <label for="fullName" class="form-label">الاسم الكامل <span
+                                    class="sb-required">*</span></label>
+                            <input type="text" class="form-control" id="fullName" placeholder="الاسم الكامل" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="phone" class="form-label">رقم الموبايل<span class="required">*</span></label>
-                            <input type="tel" class="form-control" id="phone" placeholder="رقم الموبايل (اختياري)">
+                            <label for="phone" class="form-label">رقم الموبايل <span
+                                    class="sb-required">*</span></label>
+                            <input type="tel" class="form-control" id="phone" placeholder="رقم الموبايل" required>
                         </div>
                     </div>
-                    <div class="row g-3 mb-3">
+
+                    <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="email" class="form-label">البريد الإلكتروني<span class="required">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني*">
+                            <label for="email" class="form-label">البريد الإلكتروني <span
+                                    class="sb-required">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني"
+                                required>
                         </div>
                         <div class="col-md-6">
-                            <label for="inquiryType" class="form-label">نوع الاستفسار<span class="required">*</span></label>
-                            <select id="inquiryType" class="form-select">
-                                <option selected disabled>نوع الاستفسار</option>
+                            <label for="inquiryType" class="form-label">نوع الاستفسار <span
+                                    class="sb-required">*</span></label>
+                            <select id="inquiryType" class="form-select" required>
+
+                                <option value="" selected disabled>اختر نوع الاستفسار</option>
                                 <option value="general">استفسار عام</option>
                                 <option value="support">دعم فني</option>
                                 <option value="sales">مبيعات</option>
@@ -98,18 +113,18 @@
                             </select>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">الرسالة<span class="required">*</span></label>
-                        <textarea class="form-control" id="message" rows="6" placeholder="الرسالة*"></textarea>
+
+                    <div class="sb-form-group">
+                        <label for="message" class="form-label">الرسالة <span class="sb-required">*</span></label>
+                        <textarea class="form-control" id="message" rows="6" placeholder="اكتب رسالتك هنا..."
+                            required></textarea>
                     </div>
-                    <div class="form-actions">
-                        <button type="submit" class="sb-contactus-btn btn btn-submit">أرسل رسالتك</button>
+
+                    <div class="sb-form-actions">
+                        <button type="submit" class="sb-btn-submit">أرسل رسالتك</button>
                     </div>
                 </form>
             </div>
         </div>
-
-
-
     </div>
 </section>

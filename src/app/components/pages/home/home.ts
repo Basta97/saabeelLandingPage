@@ -5,11 +5,12 @@ import { Futuref } from "../../sections/futuref/futuref";
 import { Package } from "../../sections/package/package";
 import { Faq } from "../../sections/faq/faq";
 import { Contactus } from '../../sections/contactus/contactus';
+import { AttractAd } from "../../sections/attract-ad/attract-ad";
 
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, Features, Futuref, Package, Faq,Contactus],
+  imports: [Hero, Features, Futuref, Package, Faq, Contactus, AttractAd],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

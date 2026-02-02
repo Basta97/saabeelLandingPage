@@ -10,6 +10,13 @@
   padding: clamp(12px, 2vw, 20px) clamp(16px, 4vw, 32px);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.sb-header-wrapper.sb-header-hidden {
+  transform: translateY(-100%);
 }
 
 .sb-top-bar {

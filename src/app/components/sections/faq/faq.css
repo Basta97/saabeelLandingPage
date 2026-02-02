@@ -1,7 +1,236 @@
-.sb-faq {
-    display: flex;
-    flex-direction: column;
-    gap: 56px;
+section{
     direction: rtl;
     padding: 5.625rem 0;
+    box-sizing: border-box;
+}
+
+.sb-faq-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+    gap: 3rem;
+}
+
+
+
+.sb-faq-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.sb-faq-ques {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Questions Container - Single Box */
+.sb-faq-questions {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.sb-faq-questions:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Question Items */
+.sb-question-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Border Between Questions */
+.sb-question-item:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sb-question-item:hover {
+    background: #fafafa;
+}
+
+.sb-question-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    transition: all 0.3s ease;
+}
+
+.sb-question-header p {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    transition: color 0.3s ease;
+}
+
+.sb-question-item.active .sb-question-header {
+    background: #F5F6FF;
+}
+
+.sb-question-item.active .sb-question-header p {
+    color: #5156BE;
+}
+
+.sb-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.sb-question-item.active .sb-icon {
+    transform: rotate(180deg);
+}
+
+.sb-question-answer {
+    padding: 0 1.5rem 1.5rem;
+    background: #F5F6FF;
+    animation: slideDown 0.3s ease-out;
+}
+
+.sb-question-answer p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: #666;
+    text-align: right;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pagination */
+.sb-faq-pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.sb-page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.sb-page-btn:hover {
+    border-color: #5156BE;
+    background: #5156BE;
+    color: #F5F6FF;
+}
+
+.sb-page-btn.sb-active {
+    background: #5156BE;
+    color: white;
+    border-color: #5156BE;
+    font-weight: 600;
+}
+
+.sb-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .sb-faq {
+        padding: 4rem 0;
+    }
+    
+    .sb-faq-content {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+    
+    .sb-faq-image {
+        flex: 1;
+        width: 100%;
+    }
+    
+    .sb-faq-ques {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .sb-faq {
+        padding: 3rem 0;
+    }
+    
+    .sb-faq-content {
+        gap: 2rem;
+    }
+    
+    .sb-question-header {
+        padding: 1rem 1.25rem;
+    }
+    
+    .sb-question-header p {
+        font-size: 0.9375rem;
+    }
+    
+    .sb-icon {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+    }
+    
+    .sb-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .sb-question-answer {
+        padding: 0 1.25rem 1.25rem;
+    }
+    
+    .sb-question-answer p {
+        font-size: 0.875rem;
+    }
+    
+    .sb-page-btn {
+        width: 36px;
+        height: 36px;
+    }
 }

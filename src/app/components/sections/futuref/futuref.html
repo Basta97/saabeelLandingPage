@@ -1,25 +1,51 @@
-<section>
+<section class="sb-systems-section">
     <div class="container sb-future">
         <app-section-title 
             refText="القادم في سبيل" 
             titleText="الأنظمة التي نعمل على تطويرها حاليًا">
         </app-section-title>
         <div class="sb-future-graph">
+            <!-- SVG Connection Line -->
+            <div class="sb-connection-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1206 94" fill="none" preserveAspectRatio="none">
+                    <path stroke="url(#a)" stroke-width="2" d="M1205.5 6.5H0"/>
+                    <path stroke="url(#b)" stroke-width="2" d="M900.25 13v81"/>
+                    <circle cx="900.25" cy="7" r="7" fill="#5156BE"/>
+                    <path stroke="url(#c)" stroke-width="2" d="M306.25 13v81"/>
+                    <circle cx="306.25" cy="7" r="7" fill="#FFAA00"/>
+                    <defs>
+                        <linearGradient id="a" x1="0" x2="1205.5" y1="7" y2="7" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#F5F5FA"/>
+                            <stop offset=".486" stop-color="#5156BE"/>
+                            <stop offset="1" stop-color="#fff"/>
+                        </linearGradient>
+                        <linearGradient id="b" x1="900.75" x2="900.75" y1="13" y2="94" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#5156BE"/>
+                            <stop offset="1" stop-color="#fff"/>
+                        </linearGradient>
+                        <linearGradient id="c" x1="306.75" x2="306.75" y1="13" y2="94" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FFAA00"/>
+                            <stop offset="1" stop-color="#fff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
             <div class="sb-future-cards">
-
-                <div class="sb-future-card">
+                <div class="sb-future-card sb-card-orange">
                     <div class="sb-card-title">
-                      <img src="icons/check-badge_solid.png" alt="check icons" width="24px"/>
-                      <p>إدارة الحضور والانصراف</p>
+                        <p>متابعة أولياء الامور</p>
+                        <img src="icons/check-badge_solid.png" alt="check icons" width="24px"/>
                     </div>
-                    <p>تسجيل حضور وغياب الطلاب بسهولة، مع تقارير دقيقة في أي وقت</p>
+                    <p class="sb-card-description">إشعارات وتنبيهات فورية بالحضور والغياب والنتائج والتقدم</p>
                 </div>
-                <div class="sb-future-card">
+                
+                <div class="sb-future-card sb-card-purple">
                     <div class="sb-card-title">
-                      <img src="icons/check-badge_solid.png" alt="check icons" width="24px"/>
-                      <p>إدارة الحضور والانصراف</p>
+                        <p>إدارة الحضور والانصراف</p>
+                        <img src="icons/check-badge_solid.png" alt="check icons" width="24px"/>
                     </div>
-                    <p>تسجيل حضور وغياب الطلاب بسهولة، مع تقارير دقيقة في أي وقت</p>
+                    <p class="sb-card-description">تسجيل حضور وغياب الطلاب بسهولة، مع تقارير دقيقة في أي وقت</p>
                 </div>
             </div>
         </div>
