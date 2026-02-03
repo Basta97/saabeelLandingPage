@@ -1,9 +1,24 @@
 section {
-    background: linear-gradient(135deg, #5156BE 0%, #6B70D4 100%);
+    background: linear-gradient(135deg, var(--sb-primary-color) 0%, var(--sb-primary-light, #6B70D4) 100%);
     margin: 5.625rem 0;
-    border-top-left-radius:500px ;
-    border-bottom-left-radius:500px ;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    position: relative;
+    overflow: hidden;
+}
 
+/* Accent Strip - extending from image to left border */
+section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width:10%;
+    height: 50%;
+    background: var(--sb-accent-color);
+    z-index:4;
+    border-radius: 0 3px 3px 0;
 }
 
 .sb-ad-container {
@@ -166,8 +181,15 @@ section {
 
 /* Responsive Design */
 @media (max-width: 991px) {
-    .sb-ad-section {
-        padding: 4rem 0;
+    section {
+        border-top-left-radius: 200px;
+        border-bottom-left-radius: 200px;
+        margin: 4rem 0;
+    }
+    
+    section::before {
+        width: 40%;
+        height: 4px;
     }
 
     .sb-ad-content {
@@ -205,8 +227,14 @@ section {
 }
 
 @media (max-width: 767px) {
-    .sb-ad-section {
-        padding: 3rem 0;
+    section {
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        margin: 3rem 0;
+    }
+    
+    section::before {
+        width: 30%;
     }
 
     .sb-ad-container {
@@ -242,6 +270,16 @@ section {
 }
 
 @media (max-width: 576px) {
+    section {
+        border-top-left-radius: 60px;
+        border-bottom-left-radius: 60px;
+        margin: 2.5rem 0;
+    }
+    
+    section::before {
+        display: none;
+    }
+
     .sb-ad-title {
         font-size: 1.5rem;
     }

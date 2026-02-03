@@ -1,18 +1,12 @@
 <header class="sb-header-wrapper" [class.sb-header-hidden]="!isHeaderVisible()">
   <!-- Full page overlay -->
   <div class="sb-menu-overlay" [class.sb-open]="isMenuOpen()" (click)="toggleMenu()"></div>
-  
+
   <div class="container">
     <!-- Desktop top bar ONLY -->
-    <div class="sb-top-bar d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-secondary d-none d-lg-flex">
-      <div class="sb-social-icons d-flex gap-3">
-        <a href="https://www.facebook.com/saabeelofficial/" target="_blank" rel="noopener"><img src="icons/facebook_icon.svg" alt="Facebook" class="sb-social-icon"></a>
-        <a href="https://www.youtube.com/@saabeelofficial" target="_blank" rel="noopener"><img src="icons/youtube_icon.svg" alt="YouTube" class="sb-social-icon"></a>
-        <a href="https://www.linkedin.com/company/saabeel-%D8%B3%D8%A8%D9%8A%D9%84/?originalSubdomain=eg" target="_blank" rel="noopener"><img src="icons/linkedin_icon.svg" alt="LinkedIn" class="sb-social-icon"></a>
-        <a href="https://x.com/saabeelofficial" target="_blank" rel="noopener"><img src="icons/x_icon.svg" alt="X" class="sb-social-icon"></a>
-        <a href="https://www.instagram.com/saabeelofficial/" target="_blank" rel="noopener"><img src="icons/instgram_icon.svg" alt="Instagram" class="sb-social-icon"></a>
-        <a href="https://www.tiktok.com/@saabeelofficial?lang=en" target="_blank" rel="noopener"><img src="icons/tiktok_icon.svg" alt="TikTok" class="sb-social-icon"></a>
-      </div>
+    <div
+      class="sb-top-bar d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-secondary d-none d-lg-flex">
+      <app-sb-social-icons size="small"></app-sb-social-icons>
 
       <div class="sb-contact-info d-flex gap-4 align-items-center text-white">
         <div class="sb-contact-item">
@@ -40,8 +34,8 @@
             <div class="sb-mobile-logo d-lg-none mb-3 pb-2 pt-2">
               <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="w-100">
             </div>
-            
-           
+
+
 
             <!-- Nav links -->
             <ul class="navbar-nav gap-3 text-end flex-row-reverse d-lg-flex">
@@ -52,26 +46,19 @@
               <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المدونة</a></li>
               <li class="nav-item"><a class="nav-link sb-nav-link" href="#">تواصل معنا</a></li>
             </ul>
-            
-           
-            
+
+
+
             <!-- Mobile CTA -->
             <div class="nav-item d-lg-none mt-4 px-4 pb-4">
               <button class="sb-btn-primary w-100">ابدأ الآن</button>
             </div>
-             <!-- MOBILE: Social icons -->
-            <div class="sb-mobile-social d-lg-none border-top border-2 pt-2">
-              <div class="d-flex gap-3 justify-content-center">
-                <a href="https://www.facebook.com/saabeelofficial/" target="_blank" rel="noopener"><img src="icons/facebook_icon.svg" alt="Facebook" class="sb-social-icon"></a>
-                <a href="https://www.youtube.com/@saabeelofficial" target="_blank" rel="noopener"><img src="icons/youtube_icon.svg" alt="YouTube" class="sb-social-icon"></a>
-                <a href="https://www.linkedin.com/company/saabeel-%D8%B3%D8%A8%D9%8A%D9%84/?originalSubdomain=eg" target="_blank" rel="noopener"><img src="icons/linkedin_icon.svg" alt="LinkedIn" class="sb-social-icon"></a>
-                <a href="https://x.com/saabeelofficial" target="_blank" rel="noopener"><img src="icons/x_icon.svg" alt="X" class="sb-social-icon"></a>
-                <a href="https://www.instagram.com/saabeelofficial/" target="_blank" rel="noopener"><img src="icons/instgram_icon.svg" alt="Instagram" class="sb-social-icon"></a>
-                <a href="https://www.tiktok.com/@saabeelofficial?lang=en" target="_blank" rel="noopener"><img src="icons/tiktok_icon.svg" alt="TikTok" class="sb-social-icon"></a>
-              </div>
+            <!-- MOBILE: Social icons -->
+            <div class="sb-mobile-social d-lg-none border-top border-2 pt-2 d-flex justify-content-center">
+              <app-sb-social-icons size="medium"></app-sb-social-icons>
             </div>
           </div>
-          
+
 
           <!-- Hamburger -->
           <button title="menuBar" class="sb-hamburger d-lg-none" (click)="toggleMenu()" [class.sb-open]="isMenuOpen()">
@@ -90,13 +77,51 @@
   </div>
 </header>
 
-<!-- 🔥 FLOATING WHATSAPP BUTTON (Always visible on all pages) -->
-<a href="https://wa.me/201040436991?text=مرحباً%20أود%20الاستفسار%20عن%20سبيل" 
-   target="_blank" 
-   rel="noopener" 
-   class="whatsapp-floating-btn"
-   aria-label="تواصل عبر واتساب">
-  <svg viewBox="0 0 32 32" class="whatsapp-floating-icon">
-    <path fill="currentColor" d="M16 0C7.164 0 0 7.164 0 16c0 2.826.739 5.478 2.033 7.788L0 32l8.484-2.014A15.916 15.916 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm9.438 22.713c-.38 1.07-2.23 1.955-3.056 2.089-.827.134-1.896.181-3.062-.191-1.166-.372-3.34-1.297-5.755-3.502-3.014-2.755-4.958-6.125-5.137-6.41-.179-.285-1.492-1.977-1.492-3.772 0-1.795.916-2.683 1.271-3.045.355-.362.78-.453 1.041-.453.261 0 .523.005.751.014.24.01.561-.092.878.669.316.76 1.084 2.643 1.179 2.834.095.191.159.414.032.667-.127.252-.191.414-.38.636-.19.222-.399.495-.57.666-.19.191-.388.397-.167.779.221.382 1.304 2.152 2.797 3.485 1.919 1.713 3.487 2.24 4.004 2.474.517.234.817.195 1.117-.119.3-.314.76-.848 1.22-1.382.46-.534.856-.601 1.185-.453.329.148 2.091 1.023 2.452 1.209.361.186.603.277.691.43.088.153.088.895-.292 1.966z"/>
-  </svg>
-</a>
+<!-- 🔥 FLOATING WHATSAPP BUTTON with MINI CHAT -->
+<div class="whatsapp-floating-container">
+  <!-- Mini Chat Window -->
+  <div class="sb-whatsapp-chat" [class.sb-open]="isChatOpen()">
+    <div class="sb-chat-header">
+      <div class="sb-chat-header-info">
+        <img src="logo/logo Saabeel 2.png" alt="Saabeel" class="sb-chat-avatar">
+        <div class="sb-chat-header-text">
+          <span class="sb-chat-name">سبيل</span>
+          <span class="sb-chat-status">متصل الآن</span>
+        </div>
+      </div>
+      <button class="sb-chat-close" (click)="toggleChat()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="sb-chat-body">
+      <div class="sb-chat-message">
+        <p>مرحباً! 👋</p>
+        <p>كيف يمكننا مساعدتك اليوم؟</p>
+      </div>
+    </div>
+    <div class="sb-chat-footer">
+      <button class="sb-chat-whatsapp-btn" (click)="openWhatsApp()">
+        <svg viewBox="0 0 32 32" width="20" height="20">
+          <path fill="currentColor"
+            d="M16 0C7.164 0 0 7.164 0 16c0 2.826.739 5.478 2.033 7.788L0 32l8.484-2.014A15.916 15.916 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm9.438 22.713c-.38 1.07-2.23 1.955-3.056 2.089-.827.134-1.896.181-3.062-.191-1.166-.372-3.34-1.297-5.755-3.502-3.014-2.755-4.958-6.125-5.137-6.41-.179-.285-1.492-1.977-1.492-3.772 0-1.795.916-2.683 1.271-3.045.355-.362.78-.453 1.041-.453.261 0 .523.005.751.014.24.01.561-.092.878.669.316.76 1.084 2.643 1.179 2.834.095.191.159.414.032.667-.127.252-.191.414-.38.636-.19.222-.399.495-.57.666-.19.191-.388.397-.167.779.221.382 1.304 2.152 2.797 3.485 1.919 1.713 3.487 2.24 4.004 2.474.517.234.817.195 1.117-.119.3-.314.76-.848 1.22-1.382.46-.534.856-.601 1.185-.453.329.148 2.091 1.023 2.452 1.209.361.186.603.277.691.43.088.153.088.895-.292 1.966z" />
+        </svg>
+        تواصل عبر واتساب
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating Button -->
+  <button class="whatsapp-floating-btn" (click)="toggleChat()" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 32 32" class="whatsapp-floating-icon" [class.sb-hidden]="isChatOpen()">
+      <path fill="currentColor"
+        d="M16 0C7.164 0 0 7.164 0 16c0 2.826.739 5.478 2.033 7.788L0 32l8.484-2.014A15.916 15.916 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm9.438 22.713c-.38 1.07-2.23 1.955-3.056 2.089-.827.134-1.896.181-3.062-.191-1.166-.372-3.34-1.297-5.755-3.502-3.014-2.755-4.958-6.125-5.137-6.41-.179-.285-1.492-1.977-1.492-3.772 0-1.795.916-2.683 1.271-3.045.355-.362.78-.453 1.041-.453.261 0 .523.005.751.014.24.01.561-.092.878.669.316.76 1.084 2.643 1.179 2.834.095.191.159.414.032.667-.127.252-.191.414-.38.636-.19.222-.399.495-.57.666-.19.191-.388.397-.167.779.221.382 1.304 2.152 2.797 3.485 1.919 1.713 3.487 2.24 4.004 2.474.517.234.817.195 1.117-.119.3-.314.76-.848 1.22-1.382.46-.534.856-.601 1.185-.453.329.148 2.091 1.023 2.452 1.209.361.186.603.277.691.43.088.153.088.895-.292 1.966z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" class="whatsapp-close-icon" [class.sb-visible]="isChatOpen()">
+      <path d="M18 6L6 18M6 6l12 12" />
+    </svg>
+  </button>
+</div>

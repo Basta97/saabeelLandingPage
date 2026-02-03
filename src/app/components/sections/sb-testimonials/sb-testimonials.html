@@ -1,0 +1,98 @@
+<section class="sb-testimonials-section">
+    <div class="container">
+        <div class="sb-testimonials-header">
+            <app-section-title refText="آراء العملاء" titleText="عملاؤنا يتحدثون عن سبيل">
+            </app-section-title>
+        </div>
+
+        <div class="sb-testimonials-carousel">
+            <div class="sb-testimonials-track">
+                @for (testimonial of visibleTestimonials(); track testimonial.id) {
+                <div class="sb-testimonial-card" [class.sb-active]="testimonial.id === activeTestimonialId()"
+                    [class.sb-audio-card]="testimonial.type === 'audio'"
+                    [class.sb-text-card]="testimonial.type === 'text'">
+
+                    <!-- Profile Header -->
+                    <div class="sb-testimonial-header">
+                        <img [src]="testimonial.avatar" [alt]="testimonial.name" class="sb-avatar">
+                        <div class="sb-profile-info">
+                            <h4 class="sb-profile-name">{{ testimonial.name }}</h4>
+                            <p class="sb-profile-role">{{ testimonial.role }}</p>
+                        </div>
+                        @if (testimonial.type === 'text') {
+                        <div class="sb-instagram-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z" />
+                            </svg>
+                        </div>
+                        }
+                    </div>
+
+                    <!-- Content -->
+                    @if (testimonial.type === 'audio') {
+                    <!-- Audio Player -->
+                    <div class="sb-audio-content">
+                        <p class="sb-audio-text">{{ testimonial.content }}</p>
+                        <div class="sb-audio-player">
+                            <span class="sb-audio-time">0:00 / {{ testimonial.duration }}</span>
+                            <div class="sb-waveform">
+                                @for (bar of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; track bar) {
+                                <div class="sb-wave-bar"></div>
+                                }
+                            </div>
+                        </div>
+                        <div class="sb-audio-controls">
+                            <button class="sb-control-btn sb-rewind">
+                                <span>15</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
+                                </svg>
+                            </button>
+                            <button class="sb-play-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </button>
+                            <button class="sb-control-btn sb-forward">
+                                <span>15</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    } @else {
+                    <!-- Text Content -->
+                    <div class="sb-text-content">
+                        <p class="sb-testimonial-text">{{ testimonial.content }}</p>
+                    </div>
+                    }
+                </div>
+                }
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="sb-testimonials-nav">
+            <button class="sb-nav-btn sb-nav-prev" (click)="prevSlide()" [disabled]="!canGoPrev()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button class="sb-nav-btn sb-nav-next" (click)="nextSlide()" [disabled]="!canGoNext()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>

@@ -1,7 +1,230 @@
+.sb-about-section {
+    background: linear-gradient(135deg, #FAF9F6 0%, #F5F4F0 50%, #EAE8E4 100%);
+    padding: var(--sb-section-padding) 0;
+}
+
 .sb-about {
     display: flex;
     flex-direction: column;
     gap: 56px;
     direction: rtl;
-    padding: 5.625rem 0;
+}
+
+.sb-about-content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+/* Text Side */
+.sb-about-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.sb-about-description {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--sb-text-muted);
+    margin: 0;
+    text-align: right;
+}
+
+/* Image Side */
+.sb-about-image-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+}
+
+.sb-about-shape {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 400px;
+    z-index: 1;
+}
+
+/* .sb-about-shape::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--sb-accent-color);
+    border-radius: 50%;
+    z-index: 2;
+} */
+
+.sb-about-image {
+    position: relative;
+    z-index: 3;
+    max-width: 100%;
+    height: auto;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Floating Badges */
+.sb-floating-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.sb-floating-badge span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--sb-text-dark);
+    white-space: nowrap;
+}
+
+.sb-badge-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--sb-bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Badge Positions */
+.sb-badge-1 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.sb-badge-2 {
+    top: 45%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.sb-badge-3 {
+    bottom: 25%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+@keyframes badgeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Entrance Animation */
+.sb-about-text {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.sb-about-image-wrapper {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .sb-about-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .sb-about-text {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .sb-about-description {
+        text-align: center;
+    }
+    
+    .sb-about-image-wrapper {
+        min-height: 350px;
+    }
+    
+    .sb-about-shape {
+        width: 200px;
+        height: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 767px) {
+    .sb-about-section {
+        padding: 3rem 0;
+    }
+    
+    .sb-about-image-wrapper {
+        min-height: 280px;
+    }
+    
+    .sb-floating-badge {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .sb-floating-badge span {
+        font-size: 0.75rem;
+    }
+    
+    .sb-badge-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .sb-about-shape {
+        display: none;
+    }
 }

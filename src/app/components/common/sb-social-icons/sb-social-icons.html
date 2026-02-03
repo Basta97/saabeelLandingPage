@@ -1,0 +1,7 @@
+<div class="sb-social-icons" [class.sb-size-small]="size() === 'small'" [class.sb-size-large]="size() === 'large'">
+    @for (link of socialLinks; track link.name) {
+    <a [href]="link.url" target="_blank" rel="noopener" class="sb-social-link">
+        <img [src]="link.icon" [alt]="link.name" class="sb-social-icon">
+    </a>
+    }
+</div>

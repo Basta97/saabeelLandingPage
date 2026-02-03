@@ -13,7 +13,36 @@
 }
 
 :root {
+  /* Fonts */
   --alexandria-font: 'Alexandria', sans-serif;
   --ffshamel-bold-font: 'FFShamel Family Sans One Bold', sans-serif;
-  --sb-primary-color: rgba(81, 86, 190, 1);
+  
+  /* Primary Colors */
+  --sb-primary-color: #5156BE;
+  --sb-primary-color-rgb: 81, 86, 190;
+  --sb-primary-dark: #4245A8;
+  --sb-primary-light: #6B70D4;
+  
+  /* Accent Colors */
+  --sb-accent-color: #FFB800;
+  --sb-accent-dark: #FFA000;
+  
+  /* WhatsApp Colors */
+  --sb-whatsapp-green: #25D366;
+  --sb-whatsapp-dark: #128C7E;
+  
+  /* Text Colors */
+  --sb-text-dark: #333333;
+  --sb-text-muted: #707070;
+  --sb-text-light: #555555;
+  
+  /* Background Colors */
+  --sb-bg-light: #F5F6FF;
+  --sb-bg-white: #ffffff;
+  --sb-border-light: #EAEAEA;
+  --sb-border-muted: #E0E0E0;
+  
+  /* Spacing */
+  --sb-section-padding: 5rem;
+  --sb-section-padding-mobile: 3rem;
 }

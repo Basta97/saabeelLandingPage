@@ -1,0 +1,36 @@
+.sb-nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.sb-nav-link:hover {
+    color: white;
+}
+
+.sb-nav-link.sb-active {
+    color: var(--sb-primary-color);
+}
+
+/* Underline animation */
+.sb-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--sb-primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(50%);
+}
+
+.sb-nav-link:hover::after,
+.sb-nav-link.sb-active::after {
+    width: 80%;
+}

@@ -1,0 +1,45 @@
+.sb-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.sb-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sb-social-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+/* Default Medium Size */
+.sb-social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+/* Small Size */
+.sb-size-small .sb-social-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.sb-size-small {
+    gap: 0.375rem;
+}
+
+/* Large Size */
+.sb-size-large .sb-social-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.sb-size-large {
+    gap: 0.625rem;
+}
