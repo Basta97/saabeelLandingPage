@@ -7,18 +7,19 @@ section {
     overflow: hidden;
 }
 
-/* Accent Strip - extending from image to left border */
+/* Accent Strip - originating from the image to the left border */
 section::before {
     content: '';
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width:10%;
-    height: 50%;
+    width: 25%;
+    height: 100px;
     background: var(--sb-accent-color);
-    z-index:4;
-    border-radius: 0 3px 3px 0;
+    z-index: 1;
+    border-radius: 0 100px 100px 0;
+    box-shadow: 0 0 30px rgba(255, 184, 0, 0.4);
 }
 
 .sb-ad-container {
@@ -188,8 +189,12 @@ section::before {
     }
     
     section::before {
-        width: 40%;
-        height: 4px;
+        width: 60%;
+        height: 60px;
+        border-radius: 0 50px 50px 0;
+        top: auto;
+        bottom: 20%;
+        transform: none;
     }
 
     .sb-ad-content {

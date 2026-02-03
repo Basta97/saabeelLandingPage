@@ -1,10 +1,12 @@
 import { Component, signal, OnInit, OnDestroy, HostListener, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SbSocialIcons } from '../../common/sb-social-icons/sb-social-icons';
 
 @Component({
   selector: 'app-header',
-  imports: [SbSocialIcons],
+  standalone: true,
+  imports: [SbSocialIcons, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })

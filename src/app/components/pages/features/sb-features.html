@@ -1,0 +1,37 @@
+<section class="sb-page-hero">
+    <div class="container">
+        <div class="sb-hero-content">
+            <h1 class="sb-hero-title">المميزات</h1>
+            <nav class="sb-breadcrumb">
+                <a routerLink="/" class="sb-breadcrumb-item">الرئيسية</a>
+                <span class="sb-breadcrumb-separator">—</span>
+                <span class="sb-breadcrumb-item active">المميزات</span>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="sb-features-grid">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6" *ngFor="let feature of features()">
+                <div class="sb-feature-card" [class.active]="feature.isActive">
+                    <div class="sb-card-header">
+                        <div class="sb-icon-wrapper">
+                            <img [src]="feature.icon" [alt]="feature.title">
+                        </div>
+                        <h3 class="sb-card-title">{{feature.title}}</h3>
+                    </div>
+                    <p class="sb-card-description">{{feature.description}}</p>
+                    <a href="#" class="sb-card-link">
+                        اعرف التفاصيل
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

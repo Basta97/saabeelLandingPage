@@ -1,0 +1,38 @@
+<section class="sb-page-hero">
+    <div class="container">
+        <div class="sb-hero-content">
+            <h1 class="sb-hero-title">المدونة</h1>
+            <nav class="sb-breadcrumb">
+                <a routerLink="/" class="sb-breadcrumb-item">الرئيسية</a>
+                <span class="sb-breadcrumb-separator">—</span>
+                <span class="sb-breadcrumb-item active">المدونة</span>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="sb-blog-grid">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let post of blogPosts()">
+                <div class="sb-blog-card">
+                    <div class="sb-card-image">
+                        <img [src]="post.image" [alt]="post.title">
+                    </div>
+                    <div class="sb-card-content">
+                        <h3 class="sb-card-title">{{post.title}}</h3>
+                        <p class="sb-card-description">{{post.description}}</p>
+                        <a [href]="post.link" class="sb-card-link">
+                            اعرف المزيد
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

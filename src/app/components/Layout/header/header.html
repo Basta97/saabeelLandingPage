@@ -39,12 +39,16 @@
 
             <!-- Nav links -->
             <ul class="navbar-nav gap-3 text-end flex-row-reverse d-lg-flex">
-              <li class="nav-item"><a class="nav-link sb-nav-link active" href="#">الرئيسية</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">عن سبيل</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المميزات</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">الأسئلة الشائعة</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المدونة</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" href="#">تواصل معنا</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">الرئيسية</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="about">عن سبيل</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/features"
+                  routerLinkActive="active">المميزات</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="faq">الأسئلة الشائعة</a>
+              </li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/blog"
+                  routerLinkActive="active">المدونة</a></li>
+              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="contact">تواصل معنا</a></li>
             </ul>
 
 
