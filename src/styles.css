@@ -42,7 +42,19 @@
   --sb-border-light: #EAEAEA;
   --sb-border-muted: #E0E0E0;
   
-  /* Spacing */
+  /* spacing */
   --sb-section-padding: 5rem;
   --sb-section-padding-mobile: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }

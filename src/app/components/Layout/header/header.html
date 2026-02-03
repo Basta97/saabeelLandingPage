@@ -24,42 +24,65 @@
     <nav class="sb-navbar">
       <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
         <!-- Desktop CTA -->
-        <button class="sb-btn-primary px-4 py-2 d-none d-lg-block">ابدأ الآن</button>
+        <a routerLink="/" fragment="contact"
+          class="sb-btn-primary px-4 py-2 d-none d-lg-block text-decoration-none">ابدأ الآن</a>
 
         <!-- Mobile/Desktop nav container -->
         <div class="sb-nav-container d-flex align-items-center gap-2">
           <!-- Mobile/Desktop menu -->
           <div class="sb-nav" [class.sb-open]="isMenuOpen()">
-            <!-- MOBILE: Logo at top -->
-            <div class="sb-mobile-logo d-lg-none mb-3 pb-2 pt-2">
-              <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="w-100">
+            <!-- MOBILE: Logo -->
+            <div class="sb-mobile-menu-header d-lg-none">
+              <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="sb-mobile-menu-logo">
             </div>
-
-
 
             <!-- Nav links -->
-            <ul class="navbar-nav gap-3 text-end flex-row-reverse d-lg-flex">
-              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" routerLinkActive="active"
-                  [routerLinkActiveOptions]="{exact: true}">الرئيسية</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="about">عن سبيل</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/features"
-                  routerLinkActive="active">المميزات</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="faq">الأسئلة الشائعة</a>
+            <ul class="navbar-nav text-end flex-row-reverse d-lg-flex" [class.sb-animated]="isMenuOpen()">
+              <li class="nav-item" style="--i:1"><a class="nav-link sb-nav-link" routerLink="/"
+                  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                  (click)="isMenuOpen() && toggleMenu()">الرئيسية</a></li>
+              <li class="nav-item" style="--i:2"><a class="nav-link sb-nav-link" routerLink="/" fragment="about"
+                  (click)="isMenuOpen() && toggleMenu()">عن سبيل</a>
               </li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/blog"
-                  routerLinkActive="active">المدونة</a></li>
-              <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="contact">تواصل معنا</a></li>
+              <li class="nav-item" style="--i:3"><a class="nav-link sb-nav-link" routerLink="/features"
+                  routerLinkActive="active" (click)="isMenuOpen() && toggleMenu()">المميزات</a></li>
+              <li class="nav-item" style="--i:4"><a class="nav-link sb-nav-link" routerLink="/" fragment="faq"
+                  (click)="isMenuOpen() && toggleMenu()">الأسئلة الشائعة</a>
+              </li>
+              <li class="nav-item" style="--i:5"><a class="nav-link sb-nav-link" routerLink="/blog"
+                  routerLinkActive="active" (click)="isMenuOpen() && toggleMenu()">المدونة</a></li>
+              <li class="nav-item" style="--i:6"><a class="nav-link sb-nav-link" routerLink="/" fragment="contact"
+                  (click)="isMenuOpen() && toggleMenu()">تواصل معنا</a>
+              </li>
             </ul>
 
+            <!-- Mobile Only Content -->
+            <div class="sb-mobile-extra d-lg-none">
+              <div class="sb-mobile-contact-section">
+                <p class="sb-mobile-label">تواصل معنا</p>
+                <div class="sb-mobile-contact-links">
+                  <a href="tel:+201040436991" class="sb-mobile-contact-pill">
+                    <span>+201040436991</span>
+                    <img src="icons/call_icon.svg" alt="Call">
+                  </a>
+                  <a href="mailto:hi@saabeel.com" class="sb-mobile-contact-pill">
+                    <span>hi@saabeel.com</span>
+                    <img src="icons/mail_icon.svg" alt="Mail">
+                  </a>
+                </div>
+              </div>
 
+              <!-- Mobile CTA -->
+              <div class="nav-item mt-4 w-100">
+                <a routerLink="/" fragment="contact" (click)="toggleMenu()"
+                  class="sb-btn-primary w-100 py-3 text-decoration-none d-block text-center">ابدأ الآن</a>
+              </div>
 
-            <!-- Mobile CTA -->
-            <div class="nav-item d-lg-none mt-4 px-4 pb-4">
-              <button class="sb-btn-primary w-100">ابدأ الآن</button>
-            </div>
-            <!-- MOBILE: Social icons -->
-            <div class="sb-mobile-social d-lg-none border-top border-2 pt-2 d-flex justify-content-center">
-              <app-sb-social-icons size="medium"></app-sb-social-icons>
+              <!-- Social icons -->
+              <div class="sb-mobile-social-section mt-auto">
+                <p class="sb-mobile-label">تابعنا على</p>
+                <app-sb-social-icons size="medium"></app-sb-social-icons>
+              </div>
             </div>
           </div>
 

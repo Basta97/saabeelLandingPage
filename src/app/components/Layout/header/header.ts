@@ -43,8 +43,8 @@ export class Header implements OnInit, OnDestroy {
     }
 
     // Header only visible at top of page (< 50px)
-    // Once scrolled down, it stays hidden
-    if (currentScrollY < 50) {
+    // BUT always visible if menu is open
+    if (currentScrollY < 50 || this.isMenuOpen()) {
       this.isHeaderVisible.set(true);
     } else {
       this.isHeaderVisible.set(false);
@@ -55,6 +55,17 @@ export class Header implements OnInit, OnDestroy {
 
   toggleMenu() {
     this.isMenuOpen.update(val => !val);
+
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.isMenuOpen()) {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden'; // Lock both for better mobile support
+        this.isHeaderVisible.set(true);
+      } else {
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+      }
+    }
   }
 
   toggleChat() {

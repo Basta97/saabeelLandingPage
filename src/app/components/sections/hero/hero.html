@@ -5,7 +5,7 @@
                 <div class="sb-hero-image-container" data-scroll-parallax>
                     <img src="images/part1.png" alt="Student using Sabeel platform" class="sb-img-p1" />
                     <div>
-                        <a href="https://youtu.be/0OlBYx8su48" target="_blank" rel="noopener noreferrer"
+                        <a href="javascript:void(0)" (click)="toggleVideoModal($event)"
                             aria-label="Watch Sabeel platform video">
                             <img src="images/part4.png" alt="Watch video" class="sb-img-p4" />
                         </a>
@@ -29,7 +29,8 @@
                     </div>
 
                     <div class="sb-contact-search-wrapper d-inline-flex align-items-center w-100">
-                        <button class="btn sb-btn-contact-action" aria-label="Contact us now">تواصل الان</button>
+                        <a routerLink="/" fragment="contact" class="btn sb-btn-contact-action text-decoration-none"
+                            aria-label="Contact us now">تواصل الان</a>
                         <input type="text" placeholder="هل لديك استفسار؟ فريق سبيل جاهز لمساعدتك"
                             class="form-control sb-contact-input" dir="rtl" aria-label="Ask us your question">
                     </div>
@@ -84,3 +85,24 @@
         </div>
     </div>
 </section>
+
+<!-- Premium Video Modal -->
+@if (isVideoModalOpen()) {
+<div class="sb-video-modal-overlay" (click)="toggleVideoModal()">
+    <div class="sb-video-modal-content" (click)="$event.stopPropagation()">
+        <button class="sb-modal-close" (click)="toggleVideoModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="sb-video-container">
+            <iframe [src]="videoUrl" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+}

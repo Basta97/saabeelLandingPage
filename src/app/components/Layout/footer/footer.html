@@ -6,12 +6,18 @@
                     <img src="logo/logo Saabeel 2.png" alt="Saabeel Logo" class="sb-logo-footer">
                </a>
                <ul class="navbar-nav d-flex text-white gap-3 text-end flex-row-reverse">
-                    <li class="nav-item"><a class="nav-link sb-nav-link active" href="#">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link sb-nav-link" href="#">عن سبيل</a></li>
-                    <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المميزات</a></li>
-                    <li class="nav-item"><a class="nav-link sb-nav-link" href="#">الأسئلة الشائعة</a></li>
-                    <li class="nav-item"><a class="nav-link sb-nav-link" href="#">المدونة</a></li>
-                    <li class="nav-item"><a class="nav-link sb-nav-link" href="#">تواصل معنا</a></li>
+                    <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" routerLinkActive="active"
+                              [routerLinkActiveOptions]="{exact: true}">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="about">عن سبيل</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/features"
+                              routerLinkActive="active">المميزات</a></li>
+                    <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="faq">الأسئلة
+                              الشائعة</a></li>
+                    <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/blog"
+                              routerLinkActive="active">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link sb-nav-link" routerLink="/" fragment="contact">تواصل
+                              معنا</a></li>
                </ul>
                <app-sb-social-icons size="medium"></app-sb-social-icons>
           </div>
