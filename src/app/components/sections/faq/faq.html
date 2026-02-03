@@ -2,57 +2,55 @@
     <div class="container">
         <div class="sb-faq-content">
             <div class="sb-faq-ques">
-                <app-section-title style="align-items: start !important;" refText="الأسئلة الشائعة" titleText="أسئلة قد تهمك">
+                <app-section-title style="align-items: start !important;" refText="الأسئلة الشائعة"
+                    titleText="أسئلة قد تهمك">
                 </app-section-title>
-                
+
                 <div class="sb-faq-questions">
                     @for (faq of currentFaqs(); track $index) {
-                        <div class="sb-question-item" [class.active]="activeIndex === $index">
-                            <button class="sb-question-header" (click)="toggle($index)">
-                                <p>{{faq.question}}</p>
-                                <span class="sb-icon">
-                                    @if (activeIndex === $index) {
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none">
-                                            <path stroke="#303036" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                d="M7.313 11.25h7.875m6.562 0c0 5.799-4.701 10.5-10.5 10.5S.75 17.049.75 11.25 5.451.75 11.25.75s10.5 4.701 10.5 10.5Z" />
-                                        </svg>
-                                    } @else {
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none">
-                                            <path fill="#303036"
-                                                d="M12 6a.75.75 0 0 0-1.5 0H12Zm-1.5 10.5a.75.75 0 0 0 1.5 0h-1.5Zm6-4.5a.75.75 0 0 0 0-1.5V12ZM6 10.5A.75.75 0 0 0 6 12v-1.5Zm15.75.75H21c0 5.385-4.365 9.75-9.75 9.75v1.5c6.213 0 11.25-5.037 11.25-11.25h-.75Zm-10.5 10.5V21c-5.385 0-9.75-4.365-9.75-9.75H0C0 17.463 5.037 22.5 11.25 22.5v-.75ZM.75 11.25h.75c0-5.385 4.365-9.75 9.75-9.75V0C5.037 0 0 5.037 0 11.25h.75ZM11.25.75v.75c5.385 0 9.75 4.365 9.75 9.75h1.5C22.5 5.037 17.463 0 11.25 0v.75Zm0 5.25h-.75v5.25H12V6h-.75Zm0 5.25h-.75v5.25H12v-5.25h-.75Zm5.25 0v-.75h-5.25V12h5.25v-.75Zm-5.25 0v-.75H6V12h5.25v-.75Z" />
-                                        </svg>
-                                    }
-                                </span>
-                            </button>
-                            @if (activeIndex === $index) {
-                                <div class="sb-question-answer">
-                                    <p>{{faq.answer}}</p>
-                                </div>
-                            }
+                    <div class="sb-question-item" [class.active]="activeIndex === $index">
+                        <button class="sb-question-header" (click)="toggle($index)">
+                            <p>{{faq.question}}</p>
+                            <span class="sb-icon">
+                                @if (activeIndex === $index) {
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none">
+                                    <path stroke="#303036" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M7.313 11.25h7.875m6.562 0c0 5.799-4.701 10.5-10.5 10.5S.75 17.049.75 11.25 5.451.75 11.25.75s10.5 4.701 10.5 10.5Z" />
+                                </svg>
+                                } @else {
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none">
+                                    <path fill="#303036"
+                                        d="M12 6a.75.75 0 0 0-1.5 0H12Zm-1.5 10.5a.75.75 0 0 0 1.5 0h-1.5Zm6-4.5a.75.75 0 0 0 0-1.5V12ZM6 10.5A.75.75 0 0 0 6 12v-1.5Zm15.75.75H21c0 5.385-4.365 9.75-9.75 9.75v1.5c6.213 0 11.25-5.037 11.25-11.25h-.75Zm-10.5 10.5V21c-5.385 0-9.75-4.365-9.75-9.75H0C0 17.463 5.037 22.5 11.25 22.5v-.75ZM.75 11.25h.75c0-5.385 4.365-9.75 9.75-9.75V0C5.037 0 0 5.037 0 11.25h.75ZM11.25.75v.75c5.385 0 9.75 4.365 9.75 9.75h1.5C22.5 5.037 17.463 0 11.25 0v.75Zm0 5.25h-.75v5.25H12V6h-.75Zm0 5.25h-.75v5.25H12v-5.25h-.75Zm5.25 0v-.75h-5.25V12h5.25v-.75Zm-5.25 0v-.75H6V12h5.25v-.75Z" />
+                                </svg>
+                                }
+                            </span>
+                        </button>
+                        @if (activeIndex === $index) {
+                        <div class="sb-question-answer">
+                            <p>{{faq.answer}}</p>
                         </div>
+                        }
+                    </div>
                     }
                 </div>
 
                 <div class="sb-faq-pagination">
-                    <button 
-                        class="sb-page-btn sb-page-next" 
-                        (click)="nextPage()"
-                        [disabled]="!canGoNext()">
+                    <button class="sb-page-btn sb-page-next" (click)="nextPage()" [disabled]="!canGoNext()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
-                    
+
                     <button class="sb-page-btn sb-page-number sb-active">
                         {{currentPage()}}
                     </button>
-                    
-                    <button 
-                        class="sb-page-btn sb-page-prev" 
-                        (click)="previousPage()"
-                        [disabled]="!canGoPrevious()">
+
+                    <button class="sb-page-btn sb-page-prev" (click)="previousPage()" [disabled]="!canGoPrevious()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
                 </div>
@@ -60,7 +58,7 @@
             <div class="sb-faq-image">
                 <img src="images/faqImage.png" alt="FAQ Image" class="img-fluid">
             </div>
-            
+
         </div>
     </div>
 </section>

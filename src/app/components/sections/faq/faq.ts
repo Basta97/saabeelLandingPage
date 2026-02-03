@@ -15,7 +15,7 @@ interface FaqItem {
   standalone: true
 })
 export class Faq {
-  activeIndex: number | null = null;
+  activeIndex: number | null = 0; // First question active by default
   currentPage = signal(1);
   itemsPerPage = 4;
 
@@ -38,7 +38,7 @@ export class Faq {
       question: 'كيف يتم حماية المحتوى من التصوير؟',
       answer: 'نستخدم تقنيات حماية متقدمة تمنع التصوير وتضع علامات مائية لحماية المحتوى.'
     },
-    
+
     // Page 2
     {
       question: 'ما هي خيارات الدفع المتاحة؟',
@@ -118,9 +118,9 @@ export class Faq {
 
   toggle(index: number): void {
     if (this.activeIndex === index) {
-      this.activeIndex = null; 
+      this.activeIndex = null;
     } else {
-      this.activeIndex = index; 
+      this.activeIndex = index;
     }
   }
 

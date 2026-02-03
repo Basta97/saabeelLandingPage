@@ -45,7 +45,8 @@
     z-index: 2;
 }
 
-.sb-pricing-card:hover .sb-card-icon {
+.sb-pricing-card:hover .sb-card-icon,
+.sb-pricing-card.sb-active .sb-card-icon {
     transform: rotate(360deg) scale(1.1);
     background: linear-gradient(135deg, #5156BE, #4245A8);
 }

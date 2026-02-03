@@ -1,0 +1,10 @@
+<a [href]="href()" class="sb-app-btn" [class]="customClass()" target="_blank" rel="noopener noreferrer"
+    [attr.aria-label]="ariaLabel()">
+    <div class="sb-app-btn-icon">
+        <ng-content></ng-content>
+    </div>
+    <div class="sb-app-btn-text">
+        <p class="sb-app-btn-top">{{ topText() }}</p>
+        <p class="sb-app-btn-bottom">{{ bottomText() }}</p>
+    </div>
+</a>
