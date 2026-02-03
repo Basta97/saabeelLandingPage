@@ -19,8 +19,7 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    flex: 0 0 360px;
-    max-width: 360px;
+    max-width: 658px;
 }
 
 .sb-contactus-intro {
@@ -34,6 +33,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .sb-contactus-header h1 {
@@ -56,6 +56,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
 }
 
 .sb-contact-link {
@@ -72,6 +73,8 @@
     border-radius: 12px;
     border: 1px solid #EEEEEE;
     transition: all 0.3s ease;
+    width: 100% !important;
+    cursor: pointer;
 }
 
 .sb-contact-link:hover {
@@ -89,6 +92,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
 }
 
 .sb-contact-social h4 {
@@ -109,6 +113,7 @@
     width: 44px;
     height: 44px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .sb-social-icon:hover {
@@ -260,10 +265,32 @@
 
     .sb-contactus {
         gap: 2rem;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .sb-contactus-header {
+        align-items: center;
     }
 
     .sb-contactus-header h1 {
         font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .sb-contactus-header p {
+        text-align: center;
+    }
+
+    .sb-contact-link {
+        width: 100%;
+        max-width: 100%; /* Removed the 400px limit to take full width */
+        justify-content: center;
+    }
+
+    .sb-contact-social {
+        align-items: center;
     }
 
     .sb-contact-link {

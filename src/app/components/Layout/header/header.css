@@ -27,6 +27,7 @@
   height: 36px;
   transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
   opacity: 0.75;
+  cursor: pointer;
 }
 
 .sb-social-icon:hover {
@@ -49,6 +50,7 @@
   backdrop-filter: blur(8px);
   overflow: hidden;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .sb-contact-item::before {
@@ -91,13 +93,11 @@
 }
 
 /* Nav links */
-.sb-nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 0 16px;
-}
 
+.sb-nav ul{
+  display: flex;
+  gap: 1rem !important;
+}
 .sb-nav-link {
   position: relative;
   color: white !important;
@@ -105,6 +105,7 @@
   font-size: 16px;
   padding-bottom: 4px;
   transition: color 0.25s ease;
+  cursor: pointer;
 }
 
 .sb-nav-link::before {
@@ -138,6 +139,7 @@
   border-radius:25px;
   padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 40px);
   font-size: clamp(14px, 2vw, 16px);
+  cursor: pointer;
 }
 
 .sb-btn-primary:hover {
@@ -547,6 +549,7 @@
     text-decoration: none;
     color: white;
     transition: all 0.3s ease;
+    cursor: pointer;
   }
   
   .sb-mobile-contact-pill:hover {

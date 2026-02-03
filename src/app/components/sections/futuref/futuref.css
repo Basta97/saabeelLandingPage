@@ -81,6 +81,7 @@
     position: relative;
     padding-top: 94px;
     z-index: 1;
+    cursor: pointer;
 }
 
 .sb-future-card {

@@ -106,6 +106,7 @@
     position: relative;
     overflow: hidden;
     z-index: 2;
+    cursor: pointer;
 }
 
 .sb-btn-outline::before {

@@ -100,6 +100,7 @@ section{
 .sb-question-item {
     position: relative;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 /* Border Between Questions */
