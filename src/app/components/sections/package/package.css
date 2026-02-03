@@ -23,35 +23,6 @@
     overflow: hidden;
 }
 
-/* Top and Bottom Border Effect using pseudo-elements */
-.sb-pricing-card::before,
-.sb-pricing-card::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 0;
-    background: linear-gradient(90deg, transparent, #5156BE, transparent);
-    transition: height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    z-index: 1;
-}
-
-.sb-pricing-card::before {
-    top: 0;
-    border-radius: 2rem 2rem 0 0;
-}
-
-.sb-pricing-card::after {
-    bottom: 0;
-    border-radius: 0 0 2rem 2rem;
-}
-
-.sb-pricing-card.sb-active::before,
-.sb-pricing-card.sb-active::after,
-.sb-pricing-card:hover::before,
-.sb-pricing-card:hover::after {
-    height: 8px;
-}
 
 .sb-pricing-card.sb-active,
 .sb-pricing-card:hover {

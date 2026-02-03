@@ -28,12 +28,11 @@ section {
     justify-content: center;
     position: relative;
     z-index: 2;
-    padding: 2rem 2rem 0;
 }
 
 .sb-ad-image img {
     width: 100%;
-    max-width: 450px;
+    max-width: 550px;
     height: auto;
     object-fit: contain;
     animation: floatImage 3s ease-in-out infinite;

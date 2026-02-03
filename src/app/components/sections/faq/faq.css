@@ -1,5 +1,4 @@
 section{
-    direction: rtl;
     padding: 5.625rem 0;
     box-sizing: border-box;
 }
@@ -26,6 +25,7 @@ section{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    direction: rtl;
 }
 
 /* Questions Container - Single Box */
