@@ -36,21 +36,15 @@
                     }
                 </div>
 
-                <button class="sb-show-more-btn" (click)="toggleShowMore()">
-                    @if (isExpanded()) {
-                    عرض أقل
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 15l7-7 7 7" />
-                    </svg>
-                    } @else {
+                @if (!isExpanded()) {
+                <button class="sb-show-more-btn" (click)="showMore()">
                     عرض المزيد
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 9l-7 7-7-7" />
                     </svg>
-                    }
                 </button>
+                }
             </div>
             <div class="sb-faq-image">
                 <div class="sb-image-wrapper">

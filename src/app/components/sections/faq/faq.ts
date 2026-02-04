@@ -110,8 +110,8 @@ export class Faq {
     }
   }
 
-  toggleShowMore(): void {
-    this.isExpanded.update(val => !val);
-    this.activeIndex = null; // Close all accordions when toggling
+  showMore(): void {
+    this.isExpanded.set(true);
+    this.activeIndex = null; // Close all accordions when expanding
   }
 }
