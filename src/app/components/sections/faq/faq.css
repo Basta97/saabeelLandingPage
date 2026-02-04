@@ -18,7 +18,7 @@ section{
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sb-image-wrapper {
@@ -223,6 +223,39 @@ section{
 .sb-page-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+/* Show More/Less Button */
+.sb-show-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 200px;
+    margin: 1.5rem auto 0;
+    padding: 0.875rem 1.5rem;
+    background: transparent;
+    border: 2px solid #5156BE;
+    border-radius: 12px;
+    color: #5156BE;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sb-show-more-btn:hover {
+    background: #5156BE;
+    color: white;
+}
+
+.sb-show-more-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.sb-show-more-btn:hover svg {
+    transform: translateY(2px);
 }
 
 /* Responsive Design */

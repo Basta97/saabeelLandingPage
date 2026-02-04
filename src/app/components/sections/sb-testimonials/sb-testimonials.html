@@ -6,7 +6,7 @@
         </div>
 
         <div class="sb-testimonials-carousel">
-            <div class="sb-testimonials-track">
+            <div class="sb-testimonials-track" #trackRef>
                 @for (testimonial of visibleTestimonials(); track testimonial.id) {
                 <div class="sb-testimonial-card" [class.sb-active]="testimonial.id === activeTestimonialId()"
                     [class.sb-audio-card]="testimonial.type === 'audio'"

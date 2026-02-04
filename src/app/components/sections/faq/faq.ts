@@ -16,8 +16,8 @@ interface FaqItem {
 })
 export class Faq {
   activeIndex: number | null = 0; // First question active by default
-  currentPage = signal(1);
-  itemsPerPage = 4;
+  isExpanded = signal(false);
+  itemsToShow = 4;
 
   // All FAQ data
   allFaqs: FaqItem[] = [
@@ -94,26 +94,12 @@ export class Faq {
     }
   ];
 
-  // Computed property to get current page FAQs
+  // Computed property to get visible FAQs
   currentFaqs = computed(() => {
-    const startIndex = (this.currentPage() - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    return this.allFaqs.slice(startIndex, endIndex);
-  });
-
-  // Total number of pages
-  totalPages = computed(() => {
-    return Math.ceil(this.allFaqs.length / this.itemsPerPage);
-  });
-
-  // Check if can go to next page
-  canGoNext = computed(() => {
-    return this.currentPage() < this.totalPages();
-  });
-
-  // Check if can go to previous page
-  canGoPrevious = computed(() => {
-    return this.currentPage() > 1;
+    if (this.isExpanded()) {
+      return this.allFaqs;
+    }
+    return this.allFaqs.slice(0, this.itemsToShow);
   });
 
   toggle(index: number): void {
@@ -124,24 +110,8 @@ export class Faq {
     }
   }
 
-  nextPage(): void {
-    if (this.canGoNext()) {
-      this.currentPage.update(val => val + 1);
-      this.activeIndex = null; // Close all accordions when changing page
-    }
-  }
-
-  previousPage(): void {
-    if (this.canGoPrevious()) {
-      this.currentPage.update(val => val - 1);
-      this.activeIndex = null; // Close all accordions when changing page
-    }
-  }
-
-  goToPage(page: number): void {
-    if (page >= 1 && page <= this.totalPages()) {
-      this.currentPage.set(page);
-      this.activeIndex = null; // Close all accordions when changing page
-    }
+  toggleShowMore(): void {
+    this.isExpanded.update(val => !val);
+    this.activeIndex = null; // Close all accordions when toggling
   }
 }

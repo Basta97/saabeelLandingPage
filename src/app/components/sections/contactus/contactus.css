@@ -10,7 +10,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
 }
 
@@ -121,35 +121,24 @@
     opacity: 0.8;
 }
 
-/* Right Side - Form Wrapper */
 .sb-form-wrapper {
     flex: 1;
-    max-width: 658px;
+    max-width: 100%;
 }
 
-/* Contact Form */
 .sb-contact-form {
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 24px;
     background: #ffffff;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(81, 86, 190, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     position: relative;
     overflow: hidden;
 }
 
-.sb-contact-form::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8px;
-    height: 100%;
-    background: var(--sb-primary-color);
-}
 
 .sb-contact-form .form-label {
     font-weight: 600;

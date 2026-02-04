@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { SectionTitle } from '../../common/section-title/section-title';
 
 interface Testimonial {
@@ -17,7 +17,9 @@ interface Testimonial {
     templateUrl: './sb-testimonials.html',
     styleUrl: './sb-testimonials.css',
 })
-export class SbTestimonials {
+export class SbTestimonials implements AfterViewInit {
+    @ViewChild('trackRef') trackRef!: ElementRef<HTMLDivElement>;
+
     testimonials: Testimonial[] = [
         {
             id: 1,
@@ -48,24 +50,37 @@ export class SbTestimonials {
     ];
 
     currentIndex = signal(0);
-    activeTestimonialId = signal(2); // Middle one always active for design
+    activeTestimonialId = signal(2);
+    canGoNext = signal(true);
+    canGoPrev = signal(false);
 
     visibleTestimonials = computed(() => {
         return this.testimonials;
     });
 
+    ngAfterViewInit() {
+        this.updateNavState();
+    }
+
     nextSlide() {
-        if (this.currentIndex() < this.testimonials.length - 3) {
-            this.currentIndex.update(i => i + 1);
+        if (this.trackRef) {
+            this.trackRef.nativeElement.scrollBy({ left: -420, behavior: 'smooth' });
+            setTimeout(() => this.updateNavState(), 300);
         }
     }
 
     prevSlide() {
-        if (this.currentIndex() > 0) {
-            this.currentIndex.update(i => i - 1);
+        if (this.trackRef) {
+            this.trackRef.nativeElement.scrollBy({ left: 420, behavior: 'smooth' });
+            setTimeout(() => this.updateNavState(), 300);
         }
     }
 
-    canGoNext = computed(() => this.currentIndex() < this.testimonials.length - 3);
-    canGoPrev = computed(() => this.currentIndex() > 0);
+    private updateNavState() {
+        if (this.trackRef) {
+            const el = this.trackRef.nativeElement;
+            this.canGoPrev.set(el.scrollLeft < 0);
+            this.canGoNext.set(el.scrollLeft > -(el.scrollWidth - el.clientWidth));
+        }
+    }
 }

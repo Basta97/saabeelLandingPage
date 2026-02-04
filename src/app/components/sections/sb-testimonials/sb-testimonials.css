@@ -20,18 +20,27 @@
 .sb-testimonials-track {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 0;
+    scrollbar-width: none;
 }
 
-/* Testimonial Card Base */
+.sb-testimonials-track::-webkit-scrollbar {
+    display: none;
+}
+
 .sb-testimonial-card {
-    flex: 0 0 340px;
-    max-width: 340px;
+    flex: 0 0 400px;
+    max-width: 400px;
+    min-width: 320px;
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 1.75rem;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     direction: rtl;
+    scroll-snap-align: center;
 }
 
 /* Audio Card Style */
