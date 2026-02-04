@@ -9,6 +9,8 @@ interface Testimonial {
     type: 'audio' | 'text';
     content: string;
     duration?: string;
+    audioSrc?: string;
+    isPlaying?: boolean;
 }
 
 @Component({
@@ -20,7 +22,7 @@ interface Testimonial {
 export class SbTestimonials implements AfterViewInit {
     @ViewChild('trackRef') trackRef!: ElementRef<HTMLDivElement>;
 
-    testimonials: Testimonial[] = [
+    testimonials = signal<Testimonial[]>([
         {
             id: 1,
             name: 'محمد السيد',
@@ -28,7 +30,9 @@ export class SbTestimonials implements AfterViewInit {
             avatar: 'images/cust1.png',
             type: 'audio',
             content: 'بصراحة انا تجربتي معاكوا',
-            duration: '1:23'
+            duration: '1:23',
+            audioSrc: 'audio/suratElekhlas.mp3',
+            isPlaying: false
         },
         {
             id: 2,
@@ -45,21 +49,56 @@ export class SbTestimonials implements AfterViewInit {
             avatar: 'images/cust3.png',
             type: 'audio',
             content: 'بصراحة انا تجربتي معاكوا',
-            duration: '1:23'
+            duration: '1:23',
+            audioSrc: 'audio/suratElekhlas.mp3',
+            isPlaying: false
         }
-    ];
+    ]);
 
     currentIndex = signal(0);
     activeTestimonialId = signal(2);
     canGoNext = signal(true);
     canGoPrev = signal(false);
 
+    // Track currently playing audio element to stop it when another starts
+    private currentAudioElement: HTMLAudioElement | null = null;
+
     visibleTestimonials = computed(() => {
-        return this.testimonials;
+        return this.testimonials();
     });
 
     ngAfterViewInit() {
         this.updateNavState();
+    }
+
+    toggleCardAudio(testimonial: Testimonial, audioElement: HTMLAudioElement) {
+        if (testimonial.isPlaying) {
+            audioElement.pause();
+            this.updateTestimonialState(testimonial.id, false);
+            this.currentAudioElement = null;
+        } else {
+            // Stop currently playing audio if any
+            if (this.currentAudioElement && this.currentAudioElement !== audioElement) {
+                this.currentAudioElement.pause();
+                this.currentAudioElement.currentTime = 0; // Optional: rewind
+                // Find and reset the previously playing testimonial state
+                const prev = this.testimonials().find(t => t.isPlaying && t.id !== testimonial.id);
+                if (prev) {
+                    this.updateTestimonialState(prev.id, false);
+                }
+            }
+
+            audioElement.play().then(() => {
+                this.updateTestimonialState(testimonial.id, true);
+                this.currentAudioElement = audioElement;
+            }).catch(err => console.error('Play failed', err));
+        }
+    }
+
+    updateTestimonialState(id: number, isPlaying: boolean) {
+        this.testimonials.update(items =>
+            items.map(t => t.id === id ? { ...t, isPlaying } : t)
+        );
     }
 
     nextSlide() {

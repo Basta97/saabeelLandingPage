@@ -146,6 +146,11 @@
     border-radius: 2px;
     height: 100%;
     animation: waveAnimation 1.5s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.sb-wave-bar.playing {
+    animation-play-state: running;
 }
 
 .sb-wave-bar:nth-child(odd) {

@@ -154,8 +154,7 @@
     margin-right: 0.25rem;
 }
 
-.sb-contact-form .form-control,
-.sb-contact-form .form-select {
+.sb-contact-form .form-control {
     background-color: #fcfcfd;
     border: 1.5px solid #ececf1;
     border-radius: 12px;
@@ -164,6 +163,18 @@
     color: #2D2D2D;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     direction: rtl;
+}
+
+.sb-contact-form .form-select {
+    background-color: #fcfcfd;
+    border: 1.5px solid #ececf1;
+    border-radius: 12px;
+    padding: .375rem .75rem .375rem 2.25rem; /* Standard Bootstrap padding for RTL (icon on left) */
+    font-size: 0.95rem;
+    color: #2D2D2D;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    direction: rtl;
+    background-position: left 0.75rem center;
 }
 
 .sb-contact-form .form-control:focus,
