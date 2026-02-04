@@ -33,26 +33,26 @@
           <div class="sb-nav" [class.sb-open]="isMenuOpen()">
             <!-- MOBILE: Logo -->
             <div class="sb-mobile-menu-header d-lg-none">
-              <img src="logo/saabeel-logo.svg" alt="Saabeel Logo" class="sb-mobile-menu-logo">
+              <img src="logo/saabeel-logo-white.svg" alt="Saabeel Logo" class="sb-mobile-menu-logo">
             </div>
 
             <!-- Nav links -->
             <ul class="navbar-nav text-end flex-row-reverse d-lg-flex" [class.sb-animated]="isMenuOpen()">
               <li class="nav-item" style="--i:1"><a class="nav-link sb-nav-link" routerLink="/"
                   routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                  (click)="isMenuOpen() && toggleMenu()">الرئيسية</a></li>
+                  (click)="isMenuOpen() && toggleMenu()"><span>الرئيسية</span></a></li>
               <li class="nav-item" style="--i:2"><a class="nav-link sb-nav-link" routerLink="/" fragment="about"
-                  (click)="isMenuOpen() && toggleMenu()">عن سبيل</a>
+                  (click)="isMenuOpen() && toggleMenu()"><span>عن سبيل</span></a>
               </li>
               <li class="nav-item" style="--i:3"><a class="nav-link sb-nav-link" routerLink="/features"
-                  routerLinkActive="active" (click)="isMenuOpen() && toggleMenu()">المميزات</a></li>
+                  routerLinkActive="active" (click)="isMenuOpen() && toggleMenu()"><span>المميزات</span></a></li>
               <li class="nav-item" style="--i:4"><a class="nav-link sb-nav-link" routerLink="/" fragment="faq"
-                  (click)="isMenuOpen() && toggleMenu()">الأسئلة الشائعة</a>
+                  (click)="isMenuOpen() && toggleMenu()"><span>الأسئلة الشائعة</span></a>
               </li>
               <li class="nav-item" style="--i:5"><a class="nav-link sb-nav-link" routerLink="/blog"
-                  routerLinkActive="active" (click)="isMenuOpen() && toggleMenu()">المدونة</a></li>
+                  routerLinkActive="active" (click)="isMenuOpen() && toggleMenu()"><span>المدونة</span></a></li>
               <li class="nav-item" style="--i:6"><a class="nav-link sb-nav-link" routerLink="/" fragment="contact"
-                  (click)="isMenuOpen() && toggleMenu()">تواصل معنا</a>
+                  (click)="isMenuOpen() && toggleMenu()"><span>تواصل معنا</span></a>
               </li>
             </ul>
 

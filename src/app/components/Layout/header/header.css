@@ -108,19 +108,24 @@
   cursor: pointer;
 }
 
-.sb-nav-link::before {
+.sb-nav-link span {
+  position: relative;
+  display: inline-block;
+}
+
+.sb-nav-link span::before {
   content: "";
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -4px;
   width: 0;
   height: 2px;
   background: var(--sb-primary-color);
   transition: width 0.25s ease;
 }
 
-.sb-nav-link:hover::before,
-.sb-nav-link.active::before {
+.sb-nav-link:hover span::before,
+.sb-nav-link.active span::before {
   width: 100%;
 }
 
@@ -385,7 +390,7 @@
   border: none;
   border-radius: 50px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
 }

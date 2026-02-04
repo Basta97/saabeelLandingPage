@@ -80,6 +80,10 @@ section{
     direction: rtl;
 }
 
+.sb-faq-ques app-section-title {
+    align-items: flex-start;
+}
+
 /* Questions Container - Single Box */
 .sb-faq-questions {
     display: flex;
