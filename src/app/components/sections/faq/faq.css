@@ -288,12 +288,23 @@ section{
         gap: 2rem;
     }
     
+    .sb-faq-ques {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .sb-faq-ques app-section-title {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
     .sb-question-header {
         padding: 1rem 1.25rem;
     }
     
     .sb-question-header p {
         font-size: 0.9375rem;
+        text-align: center;
     }
     
     .sb-icon {
@@ -313,10 +324,19 @@ section{
     
     .sb-question-answer p {
         font-size: 0.875rem;
+        text-align: center;
     }
     
     .sb-page-btn {
         width: 36px;
         height: 36px;
+    }
+    
+    .sb-show-more-btn {
+        margin: 1.5rem auto 0;
+    }
+    
+    .sb-image-wrapper {
+        justify-content: center;
     }
 }

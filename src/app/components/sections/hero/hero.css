@@ -187,6 +187,12 @@ svg,img{
   line-height: 180%;
 }
 
+@media (max-width: 767px) {
+  .sb-contact-input::placeholder {
+    font-size: 11px;
+  }
+}
+
 .sb-btn-contact-action {
   background-color: var(--sb-primary-color);
   color: white;

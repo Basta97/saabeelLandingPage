@@ -273,10 +273,12 @@
         scroll-snap-type: x mandatory;
         padding: 1rem 0;
         -webkit-overflow-scrolling: touch;
+        direction: rtl;
+        justify-content: flex-start;
     }
     
     .sb-testimonial-card {
-        scroll-snap-align: center;
+        scroll-snap-align: start;
         flex: 0 0 300px;
     }
 }

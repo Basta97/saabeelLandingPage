@@ -2,6 +2,17 @@
    padding: var(--sb-section-padding) 0;
 }
 
+.sb-footer a {
+    color: var(--sb-primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.sb-footer a:hover {
+    color: var(--sb-primary-color);
+    opacity: 0.8;
+}
+
 .sb-primary-footer{
     display: flex;
     flex-direction: row-reverse;

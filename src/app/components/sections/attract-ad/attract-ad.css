@@ -1,7 +1,7 @@
 section {
     background: linear-gradient(135deg, var(--sb-primary-color) 0%, var(--sb-primary-light, #6B70D4) 100%);
     margin: 5.625rem 0;
-
+    border-radius: 0 !important;
     position: relative;
     overflow: hidden;
 }
@@ -17,12 +17,12 @@ section::before {
     height: 100px;
     background: var(--sb-accent-color);
     z-index: 1;
-    border-radius: 0 100px 100px 0;
+    border-radius: 0;
     box-shadow: 0 0 30px rgba(255, 184, 0, 0.4);
 }
 
 .sb-ad-container {
-    border-radius: 30px;
+    border-radius: 0;
     overflow: hidden;
     position: relative;
 }
@@ -182,15 +182,14 @@ section::before {
 /* Responsive Design */
 @media (max-width: 991px) {
     section {
-        border-top-left-radius: 200px;
-        border-bottom-left-radius: 200px;
+        border-radius: 0 !important;
         margin: 4rem 0;
     }
     
     section::before {
         width: 60%;
         height: 60px;
-        border-radius: 0 50px 50px 0;
+        border-radius: 0;
         top: auto;
         bottom: 20%;
         transform: none;
@@ -232,8 +231,7 @@ section::before {
 
 @media (max-width: 767px) {
     section {
-        border-top-left-radius: 100px;
-        border-bottom-left-radius: 100px;
+        border-radius: 0 !important;
         margin: 3rem 0;
     }
     
@@ -242,7 +240,7 @@ section::before {
     }
 
     .sb-ad-container {
-        border-radius: 20px;
+        border-radius: 0;
     }
 
     .sb-ad-image {
@@ -275,8 +273,7 @@ section::before {
 
 @media (max-width: 576px) {
     section {
-        border-top-left-radius: 60px;
-        border-bottom-left-radius: 60px;
+        border-radius: 0 !important;
         margin: 2.5rem 0;
     }
     
