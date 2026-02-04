@@ -1,16 +1,17 @@
 .sb-app-btn {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     text-decoration: none;
     color: white;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    width: auto;
 }
 
 .sb-app-btn:hover {
@@ -25,8 +26,8 @@
 
 /* Fixed size icon container */
 .sb-app-btn-icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,14 +46,14 @@
 }
 
 .sb-app-btn-top {
-    font-size: 9px;
+    font-size: 8px;
     margin: 0;
     line-height: 110%;
     opacity: 0.8;
 }
 
 .sb-app-btn-bottom {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     margin: 0;
     line-height: 110%;

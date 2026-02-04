@@ -1,7 +1,5 @@
 main{
     background-color: rgb(249, 249, 253);
     position: relative;
-    top: -150px;
-    margin-bottom: -150px;
     border-radius: 40px;
 }

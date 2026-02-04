@@ -1,8 +1,7 @@
 section {
     background: linear-gradient(135deg, var(--sb-primary-color) 0%, var(--sb-primary-light, #6B70D4) 100%);
     margin: 5.625rem 0;
-    border-top-left-radius: 500px;
-    border-bottom-left-radius: 500px;
+
     position: relative;
     overflow: hidden;
 }

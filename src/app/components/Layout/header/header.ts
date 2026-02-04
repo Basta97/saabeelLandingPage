@@ -15,43 +15,14 @@ export class Header implements OnInit, OnDestroy {
   isMenuOpen = signal(false);
   isHeaderVisible = signal(true);
   isChatOpen = signal(false);
-  private lastScrollY = 0;
-  private scrollThreshold = 10;
 
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.lastScrollY = window.scrollY || window.pageYOffset;
-      // Hide header immediately if page is loaded scrolled down
-      if (this.lastScrollY >= 50) {
-        this.isHeaderVisible.set(false);
-      }
-    }
   }
 
   ngOnDestroy() {
   }
 
-  @HostListener('window:scroll')
-  onScroll() {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-    const currentScrollY = window.scrollY || window.pageYOffset;
-
-    if (Math.abs(currentScrollY - this.lastScrollY) < this.scrollThreshold) {
-      return;
-    }
-
-    // Header only visible at top of page (< 50px)
-    // BUT always visible if menu is open
-    if (currentScrollY < 50 || this.isMenuOpen()) {
-      this.isHeaderVisible.set(true);
-    } else {
-      this.isHeaderVisible.set(false);
-    }
-
-    this.lastScrollY = currentScrollY;
-  }
+  // Scroll logic removed - header is now constant
 
   toggleMenu() {
     this.isMenuOpen.update(val => !val);
@@ -59,11 +30,14 @@ export class Header implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       if (this.isMenuOpen()) {
         document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden'; // Lock both for better mobile support
-        this.isHeaderVisible.set(true);
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
       } else {
-        document.body.style.overflow = 'auto';
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
       }
     }
   }

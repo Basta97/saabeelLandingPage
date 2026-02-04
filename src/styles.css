@@ -43,8 +43,8 @@
   --sb-border-muted: #E0E0E0;
   
   /* spacing */
-  --sb-section-padding: 5rem;
-  --sb-section-padding-mobile: 3rem;
+  --sb-section-padding: 3rem;
+  --sb-section-padding-mobile: 2rem;
 }
 
 * {
@@ -57,4 +57,5 @@ html, body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
