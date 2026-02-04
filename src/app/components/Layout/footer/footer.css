@@ -2,13 +2,14 @@
    padding: var(--sb-section-padding) 0;
 }
 
-.sb-footer a {
+/* Secondary footer links only (copyright area) */
+.sb-secondry-footer a {
     color: var(--sb-primary-color);
     text-decoration: none;
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-.sb-footer a:hover {
+.sb-secondry-footer a:hover {
     color: var(--sb-primary-color);
     opacity: 0.8;
 }
@@ -126,13 +127,11 @@
     .sb-nav-link{
         text-align: center;
         padding: 0.625rem 1rem !important;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.05);
         font-size: 0.9375rem;
     }
     
     .sb-nav-link:hover{
-        background: rgba(255, 255, 255, 0.1);
+        color: white !important;
     }
     
     .sb-nav-link::after{
