@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'sb-blog',
+    selector: 'blog',
     standalone: true,
     imports: [CommonModule, RouterLink],
-    templateUrl: './sb-blog.html',
-    styleUrl: './sb-blog.css'
+    templateUrl: './blog.html',
+    styleUrl: './blog.css'
 })
-export class SbBlog {
+export class Blog {
     blogPosts = signal([
         {
             title: 'قم بالتدريس اونلاين | دليلك الشامل للنجاح مع منصة سبيل',

@@ -7,7 +7,7 @@ import { Package } from "../../sections/package/package";
 import { Faq } from "../../sections/faq/faq";
 import { Contactus } from '../../sections/contactus/contactus';
 import { AttractAd } from "../../sections/attract-ad/attract-ad";
-import { SbTestimonials } from "../../sections/sb-testimonials/sb-testimonials";
+import { SbTestimonials } from "../../sections/testimonials/testimonials";
 
 
 @Component({

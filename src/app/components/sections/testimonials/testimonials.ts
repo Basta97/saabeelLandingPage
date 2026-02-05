@@ -16,8 +16,8 @@ interface Testimonial {
 @Component({
     selector: 'app-sb-testimonials',
     imports: [SectionTitle],
-    templateUrl: './sb-testimonials.html',
-    styleUrl: './sb-testimonials.css',
+    templateUrl: './testimonials.html',
+    styleUrl: './testimonials.css',
 })
 export class SbTestimonials implements AfterViewInit {
     @ViewChild('trackRef') trackRef!: ElementRef<HTMLDivElement>;

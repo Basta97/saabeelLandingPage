@@ -6,10 +6,10 @@ import { RouterLink } from '@angular/router';
     selector: 'sb-features',
     standalone: true,
     imports: [CommonModule, RouterLink],
-    templateUrl: './sb-features.html',
-    styleUrl: './sb-features.css'
+    templateUrl: './features.html',
+    styleUrl: './features.css'
 })
-export class SbFeatures {
+export class Features {
     features = signal([
         {
             title: 'حماية متقدمة للمحتوى',

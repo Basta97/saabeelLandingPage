@@ -12,11 +12,11 @@ export const routes: Routes = [
       },
       {
         path: 'features',
-        loadComponent: () => import('./components/pages/features/sb-features').then((m) => m.SbFeatures),
+        loadComponent: () => import('./components/pages/features/features').then((m) => m.Features),
       },
       {
         path: 'blog',
-        loadComponent: () => import('./components/pages/blog/sb-blog').then((m) => m.SbBlog),
+        loadComponent: () => import('./components/pages/blog/blog').then((m) => m.Blog),
       },
     ],
   },
