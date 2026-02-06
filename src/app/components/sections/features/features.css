@@ -60,6 +60,7 @@ section {
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     cursor: pointer;
+    width: 100%;
     h4{
       font-size: 14px !important;
     }
@@ -246,7 +247,7 @@ section {
         left: 50%;
         bottom: 0;
         transform: translatex(-50%) !important;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         width: 44px;
         height: 44px;
         font-size: 20px;
@@ -273,11 +274,12 @@ section {
     .sb-feature-item:hover .sb-feature-icon {
         transform: translateY(-20px);
         opacity: 0;
-    }
+            }
     
     /* Text slides up on mobile hover */
     .sb-feature-item:hover > div {
-        transform: translateY(-50px);
+        transform: translateY(-70px);
+
     }
     
     .sb-feature-icon img {
