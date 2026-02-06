@@ -6,26 +6,27 @@
     <!-- Desktop top bar ONLY -->
     <div
       class="sb-top-bar d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-secondary border-opacity-25 d-none d-lg-flex">
-      <app-sb-social-icons size="small"></app-sb-social-icons>
-
       <div class="sb-contact-info d-flex gap-4 align-items-center text-white">
+        <div class="sb-contact-item">
+          <a dir="ltr" href="https://wa.me/201040436991" target="_blank" rel="noopener">+201040436991</a>
+          <img src="icons/call_icon.svg" alt="Call" class="sb-contact-icon">
+        </div>
         <div class="sb-contact-item">
           <a href="mailto:Hi@saabeel.com" target="_blank">Hi@saabeel.com</a>
           <img src="icons/mail_icon.svg" alt="Mail" class="sb-contact-icon">
         </div>
-        <div class="sb-contact-item">
-          <a href="https://wa.me/201040436991" target="_blank" rel="noopener">+201040436991</a>
-          <img src="icons/call_icon.svg" alt="Call" class="sb-contact-icon">
-        </div>
       </div>
+      <app-sb-social-icons size="small"></app-sb-social-icons>
+
     </div>
 
     <!-- Main nav -->
     <nav class="sb-navbar">
       <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
-        <!-- Desktop CTA -->
-        <a routerLink="/" fragment="contact"
-          class="sb-btn-primary px-4 py-2 d-none d-lg-block text-decoration-none">ابدأ الآن</a>
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="logo/saabeel-logo.svg" alt="Saabeel Logo" class="sb-logo">
+        </a>
 
         <!-- Mobile/Desktop nav container -->
         <div class="sb-nav-container d-flex align-items-center gap-2">
@@ -33,11 +34,11 @@
           <div class="sb-nav" [class.sb-open]="isMenuOpen()">
             <!-- MOBILE: Logo -->
             <div class="sb-mobile-menu-header d-lg-none">
-              <img src="logo/saabeel-logo-white.svg" alt="Saabeel Logo" class="sb-mobile-menu-logo">
+              <img src="logo/saabeel-logo.svg" alt="Saabeel Logo" class="sb-mobile-menu-logo">
             </div>
 
             <!-- Nav links -->
-            <ul class="navbar-nav text-end flex-row-reverse d-lg-flex" [class.sb-animated]="isMenuOpen()">
+            <ul dir="ltr" class="navbar-nav text-end flex-row-reverse d-lg-flex" [class.sb-animated]="isMenuOpen()">
               <li class="nav-item" style="--i:1"><a class="nav-link sb-nav-link" routerLink="/"
                   routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
                   (click)="isMenuOpen() && toggleMenu()"><span>الرئيسية</span></a></li>
@@ -95,10 +96,10 @@
           </button>
         </div>
 
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">
-          <img src="logo/saabeel-logo.svg" alt="Saabeel Logo" class="sb-logo">
-        </a>
+        <!-- Desktop CTA -->
+        <a routerLink="/" fragment="contact"
+          class="sb-btn-primary px-4 py-2 d-none d-lg-block text-decoration-none">ابدأ الآن</a>
+
       </div>
     </nav>
   </div>

@@ -1,4 +1,4 @@
-.sb-page-hero {
+''.sb-page-hero {
     background: #000000;
     padding: 80px 0;
     text-align: center;
@@ -44,7 +44,7 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 .sb-feature-card:hover, .sb-feature-card.active {

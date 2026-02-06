@@ -1,9 +1,8 @@
 section {
     background: linear-gradient(135deg, var(--sb-primary-color) 0%, var(--sb-primary-light, #6B70D4) 100%);
-    margin: 5.625rem 0;
+    padding: 5.625rem 0;
     border-radius: 0 !important;
     position: relative;
-    overflow: hidden;
 }
 
 /* Accent Strip - originating from the image to the left border */
@@ -23,7 +22,6 @@ section::before {
 
 .sb-ad-container {
     border-radius: 0;
-    overflow: hidden;
     position: relative;
 }
 
@@ -43,7 +41,7 @@ section::before {
     justify-content: center;
     position: relative;
     z-index: 2;
-}
+    }
 
 .sb-ad-image img {
     width: 100%;
@@ -65,7 +63,6 @@ section::before {
 /* Left Side - Content */
 .sb-ad-text {
     flex: 1;
-    padding: 3rem 3rem 3rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -97,22 +94,16 @@ section::before {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
+    
 }
 
-.sb-ad-dot {
-    color: #FFB800;
-    font-size: 1.5rem;
-    line-height: 1;
-    font-weight: bold;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-}
+
 
 .sb-ad-feature-item p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
 }
 
@@ -181,18 +172,11 @@ section::before {
 
 /* Responsive Design */
 @media (max-width: 991px) {
-    section {
-        border-radius: 0 !important;
-        margin: 4rem 0;
-    }
+
     
     section::before {
-        width: 60%;
-        height: 60px;
-        border-radius: 0;
-        top: auto;
-        bottom: 20%;
-        transform: none;
+      display: none;
+        
     }
 
     .sb-ad-content {
@@ -203,7 +187,6 @@ section::before {
     .sb-ad-image {
         flex: 1;
         width: 100%;
-        padding: 0 2rem;
     }
 
     .sb-ad-image img {
@@ -230,10 +213,7 @@ section::before {
 }
 
 @media (max-width: 767px) {
-    section {
-        border-radius: 0 !important;
-        margin: 3rem 0;
-    }
+  
     
     section::before {
         width: 30%;
@@ -272,10 +252,7 @@ section::before {
 }
 
 @media (max-width: 576px) {
-    section {
-        border-radius: 0 !important;
-        margin: 2.5rem 0;
-    }
+ 
     
     section::before {
         display: none;

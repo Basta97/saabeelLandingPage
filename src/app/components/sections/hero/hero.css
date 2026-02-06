@@ -307,8 +307,8 @@ svg,img{
 }
 
 @media (max-width: 991px) {
-  .sb-hero-section {
-    padding-top: 100px !important;
+  .sb-hero-section { 
+    padding-top: 30px !important;
   }
   
   .sb-hero-image-container{
